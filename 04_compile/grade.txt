@@ -1,8 +1,9 @@
-Grading at Tue Jul 24 22:50:03 UTC 2018
+Grading at Tue Jul 24 22:50:30 UTC 2018
 I expected to find a file called 'hello.c' but it did not exist
 (or was not a regular file)
 Here are the files that I can find:
 a.out
+grade.txt
 README
 Cannot proceed without hello.c
 
