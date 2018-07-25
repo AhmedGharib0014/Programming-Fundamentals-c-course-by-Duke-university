@@ -1,10 +1,6 @@
-Grading at Tue Jul 24 22:50:30 UTC 2018
-I expected to find a file called 'hello.c' but it did not exist
-(or was not a regular file)
-Here are the files that I can find:
-a.out
-grade.txt
-README
-Cannot proceed without hello.c
+Grading at Wed Jul 25 09:53:30 UTC 2018
+Compiling your code
+Checking if your program prints "Hello World"
+Your file matched the expected output
 
-Overall Grade: FAILED
+Overall Grade: PASSED
