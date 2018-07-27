@@ -2,11 +2,12 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-typedef struct{
+struct _retire_info{
   int months;
   double contribution;
   double Rate_of_return;
-}retire_info;
+};
+typedef struct _retire_info retire_info;
 
 double cal(double acc , retire_info st ){
   return acc*st.Rate_of_return + st.contribution + acc;
