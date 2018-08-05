@@ -9,14 +9,9 @@ void reverse(char * str) {
   for(size_t i=0 ; i < len/2 ; i++){
     x=str[i];
     str[i]=str[len-i-1];
-    str[len-1-i]=x;
-    
+    str[len-1-i]=x;    
   }
-  //  printf("%s",str);
-  //  printf("ddd\n");
   return;
-
-  //WRITE ME!
 }
 
 int main(void) {
