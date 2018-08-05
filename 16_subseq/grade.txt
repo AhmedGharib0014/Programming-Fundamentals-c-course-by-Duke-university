@@ -1,0 +1,11 @@
+Grading at Sun Aug  5 11:54:18 UTC 2018
+Attempting to compile maxSeq.c 
+maxSeq.c:2:1: error: unknown type name ‘size_t’
+ size_t maxSeq(int * array, size_t n){
+ ^
+maxSeq.c:2:28: error: unknown type name ‘size_t’
+ size_t maxSeq(int * array, size_t n){
+                            ^
+The code did not compile!
+
+Overall Grade: F
