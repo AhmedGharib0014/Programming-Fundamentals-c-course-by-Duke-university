@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void reverse(char * str) {
+void reverse(char str[]) {
   size_t len = strlen(str);
   char x ;
   if (len == 0) return;
