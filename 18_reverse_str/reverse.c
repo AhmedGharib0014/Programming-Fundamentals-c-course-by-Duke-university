@@ -3,6 +3,19 @@
 #include <string.h>
 
 void reverse(char * str) {
+  size_t len = strlen(str);
+  char x ;
+  if (len == 0) return;
+  for(size_t i=0 ; i < len/2 ; i++){
+    x=str[i];
+    str[i]=str[len-i-1];
+    str[len-1-i]=x;
+    
+  }
+  //  printf("%s",str);
+  //  printf("ddd\n");
+  return;
+
   //WRITE ME!
 }
 
