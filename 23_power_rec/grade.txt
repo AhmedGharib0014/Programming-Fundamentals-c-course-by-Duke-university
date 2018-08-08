@@ -1,0 +1,6 @@
+Grading at Wed Aug  8 11:03:48 UTC 2018
+Attempting to compile power.c
+Attempting to compile power.o with our main
+The code did not compile! (did you leave your own main in there??)
+
+Overall Grade: F
