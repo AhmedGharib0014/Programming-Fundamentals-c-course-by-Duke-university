@@ -1,0 +1,994 @@
+Grading at Sat Aug 11 12:14:08 UTC 2018
+Compiling your code
+rm test poker cards.o my-test-main.o *~
+Makefile:10: recipe for target 'clean' failed
+cc -ggdb3 -Wall -Werror -pedantic -std=gnu99   -c -o cards.o cards.c
+gcc -o test-eval -ggdb3 deck.o deck-c4.o eval-c4.o eval.o test-eval.o cards.o input.o future.o
+Testcase 1: Trying hands with nothing
+Valgrind returned an error status
+==348== Memcheck, a memory error detector
+==348== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==348== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==348== Command: ./test-eval inp.1.txt
+==348== Parent PID: 347
+==348== 
+==348== Conditional jump or move depends on uninitialised value(s)
+==348==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==348==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==348==    by 0x4019C3: is_straight_at (eval.c:123)
+==348==    by 0x402710: describe_hand (test-eval.c:49)
+==348==    by 0x402AB6: main (test-eval.c:116)
+==348== 
+==348== Conditional jump or move depends on uninitialised value(s)
+==348==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==348==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==348==    by 0x4019C3: is_straight_at (eval.c:123)
+==348==    by 0x402710: describe_hand (test-eval.c:49)
+==348==    by 0x402AB6: main (test-eval.c:116)
+==348== 
+==348== Conditional jump or move depends on uninitialised value(s)
+==348==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==348==    by 0x4019E6: is_straight_at (eval.c:124)
+==348==    by 0x402710: describe_hand (test-eval.c:49)
+==348==    by 0x402AB6: main (test-eval.c:116)
+==348== 
+==348== Conditional jump or move depends on uninitialised value(s)
+==348==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==348==    by 0x4019E6: is_straight_at (eval.c:124)
+==348==    by 0x402710: describe_hand (test-eval.c:49)
+==348==    by 0x402AB6: main (test-eval.c:116)
+==348== 
+==348== Conditional jump or move depends on uninitialised value(s)
+==348==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==348==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==348==    by 0x4019C3: is_straight_at (eval.c:123)
+==348==    by 0x401E41: find_straight (eval.c:225)
+==348==    by 0x4022B2: evaluate_hand (eval.c:290)
+==348==    by 0x40288B: describe_hand (test-eval.c:68)
+==348==    by 0x402AB6: main (test-eval.c:116)
+==348== 
+==348== Conditional jump or move depends on uninitialised value(s)
+==348==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==348==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==348==    by 0x4019C3: is_straight_at (eval.c:123)
+==348==    by 0x401E41: find_straight (eval.c:225)
+==348==    by 0x4022B2: evaluate_hand (eval.c:290)
+==348==    by 0x40288B: describe_hand (test-eval.c:68)
+==348==    by 0x402AB6: main (test-eval.c:116)
+==348== 
+==348== Conditional jump or move depends on uninitialised value(s)
+==348==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==348==    by 0x4019E6: is_straight_at (eval.c:124)
+==348==    by 0x401E41: find_straight (eval.c:225)
+==348==    by 0x4022B2: evaluate_hand (eval.c:290)
+==348==    by 0x40288B: describe_hand (test-eval.c:68)
+==348==    by 0x402AB6: main (test-eval.c:116)
+==348== 
+==348== Conditional jump or move depends on uninitialised value(s)
+==348==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==348==    by 0x4019E6: is_straight_at (eval.c:124)
+==348==    by 0x401E41: find_straight (eval.c:225)
+==348==    by 0x4022B2: evaluate_hand (eval.c:290)
+==348==    by 0x40288B: describe_hand (test-eval.c:68)
+==348==    by 0x402AB6: main (test-eval.c:116)
+==348== 
+==348== Conditional jump or move depends on uninitialised value(s)
+==348==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==348==    by 0x4019E6: is_straight_at (eval.c:124)
+==348==    by 0x402710: describe_hand (test-eval.c:49)
+==348==    by 0x402AD6: main (test-eval.c:119)
+==348== 
+==348== Conditional jump or move depends on uninitialised value(s)
+==348==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==348==    by 0x4019E6: is_straight_at (eval.c:124)
+==348==    by 0x402710: describe_hand (test-eval.c:49)
+==348==    by 0x402AD6: main (test-eval.c:119)
+==348== 
+==348== 
+==348== HEAP SUMMARY:
+==348==     in use at exit: 0 bytes in 0 blocks
+==348==   total heap usage: 278 allocs, 278 frees, 13,728 bytes allocated
+==348== 
+==348== All heap blocks were freed -- no leaks are possible
+==348== 
+==348== For counts of detected and suppressed errors, rerun with: -v
+==348== Use --track-origins=yes to see where uninitialised values come from
+==348== ERROR SUMMARY: 836 errors from 10 contexts (suppressed: 0 from 0)
+Testcase 2: Trying hands with pairs
+Valgrind returned an error status
+==353== Memcheck, a memory error detector
+==353== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==353== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==353== Command: ./test-eval inp.2.txt
+==353== Parent PID: 352
+==353== 
+==353== Conditional jump or move depends on uninitialised value(s)
+==353==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==353==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==353==    by 0x4019C3: is_straight_at (eval.c:123)
+==353==    by 0x402710: describe_hand (test-eval.c:49)
+==353==    by 0x402AB6: main (test-eval.c:116)
+==353== 
+==353== Conditional jump or move depends on uninitialised value(s)
+==353==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==353==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==353==    by 0x4019C3: is_straight_at (eval.c:123)
+==353==    by 0x402710: describe_hand (test-eval.c:49)
+==353==    by 0x402AB6: main (test-eval.c:116)
+==353== 
+==353== Conditional jump or move depends on uninitialised value(s)
+==353==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==353==    by 0x4019E6: is_straight_at (eval.c:124)
+==353==    by 0x402710: describe_hand (test-eval.c:49)
+==353==    by 0x402AB6: main (test-eval.c:116)
+==353== 
+==353== Conditional jump or move depends on uninitialised value(s)
+==353==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==353==    by 0x4019E6: is_straight_at (eval.c:124)
+==353==    by 0x402710: describe_hand (test-eval.c:49)
+==353==    by 0x402AB6: main (test-eval.c:116)
+==353== 
+==353== Conditional jump or move depends on uninitialised value(s)
+==353==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==353==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==353==    by 0x4019C3: is_straight_at (eval.c:123)
+==353==    by 0x401E41: find_straight (eval.c:225)
+==353==    by 0x4022B2: evaluate_hand (eval.c:290)
+==353==    by 0x40288B: describe_hand (test-eval.c:68)
+==353==    by 0x402AB6: main (test-eval.c:116)
+==353== 
+==353== Conditional jump or move depends on uninitialised value(s)
+==353==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==353==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==353==    by 0x4019C3: is_straight_at (eval.c:123)
+==353==    by 0x401E41: find_straight (eval.c:225)
+==353==    by 0x4022B2: evaluate_hand (eval.c:290)
+==353==    by 0x40288B: describe_hand (test-eval.c:68)
+==353==    by 0x402AB6: main (test-eval.c:116)
+==353== 
+==353== Conditional jump or move depends on uninitialised value(s)
+==353==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==353==    by 0x4019E6: is_straight_at (eval.c:124)
+==353==    by 0x401E41: find_straight (eval.c:225)
+==353==    by 0x4022B2: evaluate_hand (eval.c:290)
+==353==    by 0x40288B: describe_hand (test-eval.c:68)
+==353==    by 0x402AB6: main (test-eval.c:116)
+==353== 
+==353== Conditional jump or move depends on uninitialised value(s)
+==353==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==353==    by 0x4019E6: is_straight_at (eval.c:124)
+==353==    by 0x401E41: find_straight (eval.c:225)
+==353==    by 0x4022B2: evaluate_hand (eval.c:290)
+==353==    by 0x40288B: describe_hand (test-eval.c:68)
+==353==    by 0x402AB6: main (test-eval.c:116)
+==353== 
+==353== Conditional jump or move depends on uninitialised value(s)
+==353==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==353==    by 0x4019E6: is_straight_at (eval.c:124)
+==353==    by 0x402710: describe_hand (test-eval.c:49)
+==353==    by 0x402AD6: main (test-eval.c:119)
+==353== 
+==353== Conditional jump or move depends on uninitialised value(s)
+==353==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==353==    by 0x4019E6: is_straight_at (eval.c:124)
+==353==    by 0x402710: describe_hand (test-eval.c:49)
+==353==    by 0x402AD6: main (test-eval.c:119)
+==353== 
+==353== 
+==353== HEAP SUMMARY:
+==353==     in use at exit: 0 bytes in 0 blocks
+==353==   total heap usage: 232 allocs, 232 frees, 13,028 bytes allocated
+==353== 
+==353== All heap blocks were freed -- no leaks are possible
+==353== 
+==353== For counts of detected and suppressed errors, rerun with: -v
+==353== Use --track-origins=yes to see where uninitialised values come from
+==353== ERROR SUMMARY: 799 errors from 10 contexts (suppressed: 0 from 0)
+Testcase 3: Trying hands with 2 pairs
+Valgrind returned an error status
+==358== Memcheck, a memory error detector
+==358== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==358== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==358== Command: ./test-eval inp.3.txt
+==358== Parent PID: 357
+==358== 
+==358== Conditional jump or move depends on uninitialised value(s)
+==358==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==358==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==358==    by 0x4019C3: is_straight_at (eval.c:123)
+==358==    by 0x402710: describe_hand (test-eval.c:49)
+==358==    by 0x402AB6: main (test-eval.c:116)
+==358== 
+==358== Conditional jump or move depends on uninitialised value(s)
+==358==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==358==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==358==    by 0x4019C3: is_straight_at (eval.c:123)
+==358==    by 0x402710: describe_hand (test-eval.c:49)
+==358==    by 0x402AB6: main (test-eval.c:116)
+==358== 
+==358== Conditional jump or move depends on uninitialised value(s)
+==358==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==358==    by 0x4019E6: is_straight_at (eval.c:124)
+==358==    by 0x402710: describe_hand (test-eval.c:49)
+==358==    by 0x402AB6: main (test-eval.c:116)
+==358== 
+==358== Conditional jump or move depends on uninitialised value(s)
+==358==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==358==    by 0x4019E6: is_straight_at (eval.c:124)
+==358==    by 0x402710: describe_hand (test-eval.c:49)
+==358==    by 0x402AB6: main (test-eval.c:116)
+==358== 
+==358== Conditional jump or move depends on uninitialised value(s)
+==358==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==358==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==358==    by 0x4019C3: is_straight_at (eval.c:123)
+==358==    by 0x401E41: find_straight (eval.c:225)
+==358==    by 0x4022B2: evaluate_hand (eval.c:290)
+==358==    by 0x40288B: describe_hand (test-eval.c:68)
+==358==    by 0x402AB6: main (test-eval.c:116)
+==358== 
+==358== Conditional jump or move depends on uninitialised value(s)
+==358==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==358==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==358==    by 0x4019C3: is_straight_at (eval.c:123)
+==358==    by 0x401E41: find_straight (eval.c:225)
+==358==    by 0x4022B2: evaluate_hand (eval.c:290)
+==358==    by 0x40288B: describe_hand (test-eval.c:68)
+==358==    by 0x402AB6: main (test-eval.c:116)
+==358== 
+==358== Conditional jump or move depends on uninitialised value(s)
+==358==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==358==    by 0x4019E6: is_straight_at (eval.c:124)
+==358==    by 0x401E41: find_straight (eval.c:225)
+==358==    by 0x4022B2: evaluate_hand (eval.c:290)
+==358==    by 0x40288B: describe_hand (test-eval.c:68)
+==358==    by 0x402AB6: main (test-eval.c:116)
+==358== 
+==358== Conditional jump or move depends on uninitialised value(s)
+==358==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==358==    by 0x4019E6: is_straight_at (eval.c:124)
+==358==    by 0x401E41: find_straight (eval.c:225)
+==358==    by 0x4022B2: evaluate_hand (eval.c:290)
+==358==    by 0x40288B: describe_hand (test-eval.c:68)
+==358==    by 0x402AB6: main (test-eval.c:116)
+==358== 
+==358== Conditional jump or move depends on uninitialised value(s)
+==358==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==358==    by 0x4019E6: is_straight_at (eval.c:124)
+==358==    by 0x402710: describe_hand (test-eval.c:49)
+==358==    by 0x402AD6: main (test-eval.c:119)
+==358== 
+==358== Conditional jump or move depends on uninitialised value(s)
+==358==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==358==    by 0x4019E6: is_straight_at (eval.c:124)
+==358==    by 0x402710: describe_hand (test-eval.c:49)
+==358==    by 0x402AD6: main (test-eval.c:119)
+==358== 
+==358== 
+==358== HEAP SUMMARY:
+==358==     in use at exit: 0 bytes in 0 blocks
+==358==   total heap usage: 544 allocs, 544 frees, 18,344 bytes allocated
+==358== 
+==358== All heap blocks were freed -- no leaks are possible
+==358== 
+==358== For counts of detected and suppressed errors, rerun with: -v
+==358== Use --track-origins=yes to see where uninitialised values come from
+==358== ERROR SUMMARY: 1552 errors from 10 contexts (suppressed: 0 from 0)
+Testcase 4: Trying hands with 3 of a kind
+Valgrind returned an error status
+==363== Memcheck, a memory error detector
+==363== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==363== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==363== Command: ./test-eval inp.4.txt
+==363== Parent PID: 362
+==363== 
+==363== Conditional jump or move depends on uninitialised value(s)
+==363==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==363==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==363==    by 0x4019C3: is_straight_at (eval.c:123)
+==363==    by 0x402710: describe_hand (test-eval.c:49)
+==363==    by 0x402AB6: main (test-eval.c:116)
+==363== 
+==363== Conditional jump or move depends on uninitialised value(s)
+==363==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==363==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==363==    by 0x4019C3: is_straight_at (eval.c:123)
+==363==    by 0x402710: describe_hand (test-eval.c:49)
+==363==    by 0x402AB6: main (test-eval.c:116)
+==363== 
+==363== Conditional jump or move depends on uninitialised value(s)
+==363==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==363==    by 0x4019E6: is_straight_at (eval.c:124)
+==363==    by 0x402710: describe_hand (test-eval.c:49)
+==363==    by 0x402AB6: main (test-eval.c:116)
+==363== 
+==363== Conditional jump or move depends on uninitialised value(s)
+==363==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==363==    by 0x4019E6: is_straight_at (eval.c:124)
+==363==    by 0x402710: describe_hand (test-eval.c:49)
+==363==    by 0x402AB6: main (test-eval.c:116)
+==363== 
+==363== Conditional jump or move depends on uninitialised value(s)
+==363==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==363==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==363==    by 0x4019C3: is_straight_at (eval.c:123)
+==363==    by 0x401E41: find_straight (eval.c:225)
+==363==    by 0x4022B2: evaluate_hand (eval.c:290)
+==363==    by 0x40288B: describe_hand (test-eval.c:68)
+==363==    by 0x402AB6: main (test-eval.c:116)
+==363== 
+==363== Conditional jump or move depends on uninitialised value(s)
+==363==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==363==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==363==    by 0x4019C3: is_straight_at (eval.c:123)
+==363==    by 0x401E41: find_straight (eval.c:225)
+==363==    by 0x4022B2: evaluate_hand (eval.c:290)
+==363==    by 0x40288B: describe_hand (test-eval.c:68)
+==363==    by 0x402AB6: main (test-eval.c:116)
+==363== 
+==363== Conditional jump or move depends on uninitialised value(s)
+==363==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==363==    by 0x4019E6: is_straight_at (eval.c:124)
+==363==    by 0x401E41: find_straight (eval.c:225)
+==363==    by 0x4022B2: evaluate_hand (eval.c:290)
+==363==    by 0x40288B: describe_hand (test-eval.c:68)
+==363==    by 0x402AB6: main (test-eval.c:116)
+==363== 
+==363== Conditional jump or move depends on uninitialised value(s)
+==363==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==363==    by 0x4019E6: is_straight_at (eval.c:124)
+==363==    by 0x401E41: find_straight (eval.c:225)
+==363==    by 0x4022B2: evaluate_hand (eval.c:290)
+==363==    by 0x40288B: describe_hand (test-eval.c:68)
+==363==    by 0x402AB6: main (test-eval.c:116)
+==363== 
+==363== Conditional jump or move depends on uninitialised value(s)
+==363==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==363==    by 0x4019E6: is_straight_at (eval.c:124)
+==363==    by 0x402710: describe_hand (test-eval.c:49)
+==363==    by 0x402AD6: main (test-eval.c:119)
+==363== 
+==363== Conditional jump or move depends on uninitialised value(s)
+==363==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==363==    by 0x4019E6: is_straight_at (eval.c:124)
+==363==    by 0x402710: describe_hand (test-eval.c:49)
+==363==    by 0x402AD6: main (test-eval.c:119)
+==363== 
+==363== 
+==363== HEAP SUMMARY:
+==363==     in use at exit: 0 bytes in 0 blocks
+==363==   total heap usage: 352 allocs, 352 frees, 15,296 bytes allocated
+==363== 
+==363== All heap blocks were freed -- no leaks are possible
+==363== 
+==363== For counts of detected and suppressed errors, rerun with: -v
+==363== Use --track-origins=yes to see where uninitialised values come from
+==363== ERROR SUMMARY: 1275 errors from 10 contexts (suppressed: 0 from 0)
+Testcase 5: Trying hands with straights
+Valgrind returned an error status
+==368== Memcheck, a memory error detector
+==368== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==368== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==368== Command: ./test-eval inp.5.txt
+==368== Parent PID: 367
+==368== 
+==368== Conditional jump or move depends on uninitialised value(s)
+==368==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==368==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==368==    by 0x4019C3: is_straight_at (eval.c:123)
+==368==    by 0x402710: describe_hand (test-eval.c:49)
+==368==    by 0x402AB6: main (test-eval.c:116)
+==368== 
+==368== Conditional jump or move depends on uninitialised value(s)
+==368==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==368==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==368==    by 0x4019C3: is_straight_at (eval.c:123)
+==368==    by 0x402710: describe_hand (test-eval.c:49)
+==368==    by 0x402AB6: main (test-eval.c:116)
+==368== 
+==368== Conditional jump or move depends on uninitialised value(s)
+==368==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==368==    by 0x4019E6: is_straight_at (eval.c:124)
+==368==    by 0x402710: describe_hand (test-eval.c:49)
+==368==    by 0x402AB6: main (test-eval.c:116)
+==368== 
+==368== Conditional jump or move depends on uninitialised value(s)
+==368==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==368==    by 0x4019E6: is_straight_at (eval.c:124)
+==368==    by 0x402710: describe_hand (test-eval.c:49)
+==368==    by 0x402AB6: main (test-eval.c:116)
+==368== 
+==368== Conditional jump or move depends on uninitialised value(s)
+==368==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==368==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==368==    by 0x4019C3: is_straight_at (eval.c:123)
+==368==    by 0x401E41: find_straight (eval.c:225)
+==368==    by 0x4022B2: evaluate_hand (eval.c:290)
+==368==    by 0x40288B: describe_hand (test-eval.c:68)
+==368==    by 0x402AB6: main (test-eval.c:116)
+==368== 
+==368== Conditional jump or move depends on uninitialised value(s)
+==368==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==368==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==368==    by 0x4019C3: is_straight_at (eval.c:123)
+==368==    by 0x401E41: find_straight (eval.c:225)
+==368==    by 0x4022B2: evaluate_hand (eval.c:290)
+==368==    by 0x40288B: describe_hand (test-eval.c:68)
+==368==    by 0x402AB6: main (test-eval.c:116)
+==368== 
+==368== Conditional jump or move depends on uninitialised value(s)
+==368==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==368==    by 0x4019E6: is_straight_at (eval.c:124)
+==368==    by 0x401E41: find_straight (eval.c:225)
+==368==    by 0x4022B2: evaluate_hand (eval.c:290)
+==368==    by 0x40288B: describe_hand (test-eval.c:68)
+==368==    by 0x402AB6: main (test-eval.c:116)
+==368== 
+==368== Conditional jump or move depends on uninitialised value(s)
+==368==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==368==    by 0x4019E6: is_straight_at (eval.c:124)
+==368==    by 0x401E41: find_straight (eval.c:225)
+==368==    by 0x4022B2: evaluate_hand (eval.c:290)
+==368==    by 0x40288B: describe_hand (test-eval.c:68)
+==368==    by 0x402AB6: main (test-eval.c:116)
+==368== 
+==368== Conditional jump or move depends on uninitialised value(s)
+==368==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==368==    by 0x4019E6: is_straight_at (eval.c:124)
+==368==    by 0x402710: describe_hand (test-eval.c:49)
+==368==    by 0x402AD6: main (test-eval.c:119)
+==368== 
+==368== Conditional jump or move depends on uninitialised value(s)
+==368==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==368==    by 0x4019E6: is_straight_at (eval.c:124)
+==368==    by 0x402710: describe_hand (test-eval.c:49)
+==368==    by 0x402AD6: main (test-eval.c:119)
+==368== 
+==368== 
+==368== HEAP SUMMARY:
+==368==     in use at exit: 0 bytes in 0 blocks
+==368==   total heap usage: 360 allocs, 360 frees, 15,704 bytes allocated
+==368== 
+==368== All heap blocks were freed -- no leaks are possible
+==368== 
+==368== For counts of detected and suppressed errors, rerun with: -v
+==368== Use --track-origins=yes to see where uninitialised values come from
+==368== ERROR SUMMARY: 1522 errors from 10 contexts (suppressed: 0 from 0)
+Testcase 6: Trying hands with flushes
+Valgrind returned an error status
+==373== Memcheck, a memory error detector
+==373== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==373== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==373== Command: ./test-eval inp.6.txt
+==373== Parent PID: 372
+==373== 
+==373== Conditional jump or move depends on uninitialised value(s)
+==373==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==373==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==373==    by 0x4019C3: is_straight_at (eval.c:123)
+==373==    by 0x402710: describe_hand (test-eval.c:49)
+==373==    by 0x402AB6: main (test-eval.c:116)
+==373== 
+==373== Conditional jump or move depends on uninitialised value(s)
+==373==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==373==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==373==    by 0x4019C3: is_straight_at (eval.c:123)
+==373==    by 0x402710: describe_hand (test-eval.c:49)
+==373==    by 0x402AB6: main (test-eval.c:116)
+==373== 
+==373== Conditional jump or move depends on uninitialised value(s)
+==373==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==373==    by 0x4019E6: is_straight_at (eval.c:124)
+==373==    by 0x402710: describe_hand (test-eval.c:49)
+==373==    by 0x402AB6: main (test-eval.c:116)
+==373== 
+==373== Conditional jump or move depends on uninitialised value(s)
+==373==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==373==    by 0x4019E6: is_straight_at (eval.c:124)
+==373==    by 0x402710: describe_hand (test-eval.c:49)
+==373==    by 0x402AB6: main (test-eval.c:116)
+==373== 
+==373== Conditional jump or move depends on uninitialised value(s)
+==373==    at 0x4018A2: is_n_length_straight_at (eval.c:94)
+==373==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==373==    by 0x4019C3: is_straight_at (eval.c:123)
+==373==    by 0x4026D9: describe_hand (test-eval.c:46)
+==373==    by 0x402AB6: main (test-eval.c:116)
+==373== 
+==373== Conditional jump or move depends on uninitialised value(s)
+==373==    at 0x4018AF: is_n_length_straight_at (eval.c:95)
+==373==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==373==    by 0x4019C3: is_straight_at (eval.c:123)
+==373==    by 0x4026D9: describe_hand (test-eval.c:46)
+==373==    by 0x402AB6: main (test-eval.c:116)
+==373== 
+==373== Conditional jump or move depends on uninitialised value(s)
+==373==    at 0x4018A2: is_n_length_straight_at (eval.c:94)
+==373==    by 0x4019E6: is_straight_at (eval.c:124)
+==373==    by 0x4026D9: describe_hand (test-eval.c:46)
+==373==    by 0x402AB6: main (test-eval.c:116)
+==373== 
+==373== Conditional jump or move depends on uninitialised value(s)
+==373==    at 0x4018AF: is_n_length_straight_at (eval.c:95)
+==373==    by 0x4019E6: is_straight_at (eval.c:124)
+==373==    by 0x4026D9: describe_hand (test-eval.c:46)
+==373==    by 0x402AB6: main (test-eval.c:116)
+==373== 
+==373== Conditional jump or move depends on uninitialised value(s)
+==373==    at 0x4018A2: is_n_length_straight_at (eval.c:94)
+==373==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==373==    by 0x4019C3: is_straight_at (eval.c:123)
+==373==    by 0x401E41: find_straight (eval.c:225)
+==373==    by 0x401FFF: evaluate_hand (eval.c:256)
+==373==    by 0x40288B: describe_hand (test-eval.c:68)
+==373==    by 0x402AB6: main (test-eval.c:116)
+==373== 
+==373== Conditional jump or move depends on uninitialised value(s)
+==373==    at 0x4018AF: is_n_length_straight_at (eval.c:95)
+==373==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==373==    by 0x4019C3: is_straight_at (eval.c:123)
+==373==    by 0x401E41: find_straight (eval.c:225)
+==373==    by 0x401FFF: evaluate_hand (eval.c:256)
+==373==    by 0x40288B: describe_hand (test-eval.c:68)
+==373==    by 0x402AB6: main (test-eval.c:116)
+==373== 
+==373== Conditional jump or move depends on uninitialised value(s)
+==373==    at 0x4018A2: is_n_length_straight_at (eval.c:94)
+==373==    by 0x4019E6: is_straight_at (eval.c:124)
+==373==    by 0x401E41: find_straight (eval.c:225)
+==373==    by 0x401FFF: evaluate_hand (eval.c:256)
+==373==    by 0x40288B: describe_hand (test-eval.c:68)
+==373==    by 0x402AB6: main (test-eval.c:116)
+==373== 
+==373== Conditional jump or move depends on uninitialised value(s)
+==373==    at 0x4018AF: is_n_length_straight_at (eval.c:95)
+==373==    by 0x4019E6: is_straight_at (eval.c:124)
+==373==    by 0x401E41: find_straight (eval.c:225)
+==373==    by 0x401FFF: evaluate_hand (eval.c:256)
+==373==    by 0x40288B: describe_hand (test-eval.c:68)
+==373==    by 0x402AB6: main (test-eval.c:116)
+==373== 
+==373== Conditional jump or move depends on uninitialised value(s)
+==373==    at 0x4018A2: is_n_length_straight_at (eval.c:94)
+==373==    by 0x4019E6: is_straight_at (eval.c:124)
+==373==    by 0x4026D9: describe_hand (test-eval.c:46)
+==373==    by 0x402AD6: main (test-eval.c:119)
+==373== 
+==373== Conditional jump or move depends on uninitialised value(s)
+==373==    at 0x4018AF: is_n_length_straight_at (eval.c:95)
+==373==    by 0x4019E6: is_straight_at (eval.c:124)
+==373==    by 0x4026D9: describe_hand (test-eval.c:46)
+==373==    by 0x402AD6: main (test-eval.c:119)
+==373== 
+==373== Conditional jump or move depends on uninitialised value(s)
+==373==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==373==    by 0x4019E6: is_straight_at (eval.c:124)
+==373==    by 0x402710: describe_hand (test-eval.c:49)
+==373==    by 0x402AD6: main (test-eval.c:119)
+==373== 
+==373== Conditional jump or move depends on uninitialised value(s)
+==373==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==373==    by 0x4019E6: is_straight_at (eval.c:124)
+==373==    by 0x402710: describe_hand (test-eval.c:49)
+==373==    by 0x402AD6: main (test-eval.c:119)
+==373== 
+==373== Conditional jump or move depends on uninitialised value(s)
+==373==    at 0x4018B9: is_n_length_straight_at (eval.c:95)
+==373==    by 0x4019E6: is_straight_at (eval.c:124)
+==373==    by 0x4026D9: describe_hand (test-eval.c:46)
+==373==    by 0x402AD6: main (test-eval.c:119)
+==373== 
+==373== 
+==373== HEAP SUMMARY:
+==373==     in use at exit: 0 bytes in 0 blocks
+==373==   total heap usage: 898 allocs, 898 frees, 25,784 bytes allocated
+==373== 
+==373== All heap blocks were freed -- no leaks are possible
+==373== 
+==373== For counts of detected and suppressed errors, rerun with: -v
+==373== Use --track-origins=yes to see where uninitialised values come from
+==373== ERROR SUMMARY: 4085 errors from 17 contexts (suppressed: 0 from 0)
+Testcase 7: Trying hands with full houses
+Valgrind returned an error status
+==378== Memcheck, a memory error detector
+==378== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==378== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==378== Command: ./test-eval inp.7.txt
+==378== Parent PID: 377
+==378== 
+==378== Conditional jump or move depends on uninitialised value(s)
+==378==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==378==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==378==    by 0x4019C3: is_straight_at (eval.c:123)
+==378==    by 0x402710: describe_hand (test-eval.c:49)
+==378==    by 0x402AB6: main (test-eval.c:116)
+==378== 
+==378== Conditional jump or move depends on uninitialised value(s)
+==378==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==378==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==378==    by 0x4019C3: is_straight_at (eval.c:123)
+==378==    by 0x402710: describe_hand (test-eval.c:49)
+==378==    by 0x402AB6: main (test-eval.c:116)
+==378== 
+==378== Conditional jump or move depends on uninitialised value(s)
+==378==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==378==    by 0x4019E6: is_straight_at (eval.c:124)
+==378==    by 0x402710: describe_hand (test-eval.c:49)
+==378==    by 0x402AB6: main (test-eval.c:116)
+==378== 
+==378== Conditional jump or move depends on uninitialised value(s)
+==378==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==378==    by 0x4019E6: is_straight_at (eval.c:124)
+==378==    by 0x402710: describe_hand (test-eval.c:49)
+==378==    by 0x402AB6: main (test-eval.c:116)
+==378== 
+==378== Conditional jump or move depends on uninitialised value(s)
+==378==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==378==    by 0x4019E6: is_straight_at (eval.c:124)
+==378==    by 0x402710: describe_hand (test-eval.c:49)
+==378==    by 0x402AD6: main (test-eval.c:119)
+==378== 
+==378== Conditional jump or move depends on uninitialised value(s)
+==378==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==378==    by 0x4019E6: is_straight_at (eval.c:124)
+==378==    by 0x402710: describe_hand (test-eval.c:49)
+==378==    by 0x402AD6: main (test-eval.c:119)
+==378== 
+==378== 
+==378== HEAP SUMMARY:
+==378==     in use at exit: 0 bytes in 0 blocks
+==378==   total heap usage: 636 allocs, 636 frees, 21,404 bytes allocated
+==378== 
+==378== All heap blocks were freed -- no leaks are possible
+==378== 
+==378== For counts of detected and suppressed errors, rerun with: -v
+==378== Use --track-origins=yes to see where uninitialised values come from
+==378== ERROR SUMMARY: 1023 errors from 6 contexts (suppressed: 0 from 0)
+Testcase 8: Trying hands with 4 of a kind
+Valgrind returned an error status
+==383== Memcheck, a memory error detector
+==383== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==383== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==383== Command: ./test-eval inp.8.txt
+==383== Parent PID: 382
+==383== 
+==383== Conditional jump or move depends on uninitialised value(s)
+==383==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==383==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==383==    by 0x4019C3: is_straight_at (eval.c:123)
+==383==    by 0x402710: describe_hand (test-eval.c:49)
+==383==    by 0x402AB6: main (test-eval.c:116)
+==383== 
+==383== Conditional jump or move depends on uninitialised value(s)
+==383==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==383==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==383==    by 0x4019C3: is_straight_at (eval.c:123)
+==383==    by 0x402710: describe_hand (test-eval.c:49)
+==383==    by 0x402AB6: main (test-eval.c:116)
+==383== 
+==383== Conditional jump or move depends on uninitialised value(s)
+==383==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==383==    by 0x4019E6: is_straight_at (eval.c:124)
+==383==    by 0x402710: describe_hand (test-eval.c:49)
+==383==    by 0x402AB6: main (test-eval.c:116)
+==383== 
+==383== Conditional jump or move depends on uninitialised value(s)
+==383==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==383==    by 0x4019E6: is_straight_at (eval.c:124)
+==383==    by 0x402710: describe_hand (test-eval.c:49)
+==383==    by 0x402AB6: main (test-eval.c:116)
+==383== 
+==383== Conditional jump or move depends on uninitialised value(s)
+==383==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==383==    by 0x4019E6: is_straight_at (eval.c:124)
+==383==    by 0x402710: describe_hand (test-eval.c:49)
+==383==    by 0x402AD6: main (test-eval.c:119)
+==383== 
+==383== Conditional jump or move depends on uninitialised value(s)
+==383==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==383==    by 0x4019E6: is_straight_at (eval.c:124)
+==383==    by 0x402710: describe_hand (test-eval.c:49)
+==383==    by 0x402AD6: main (test-eval.c:119)
+==383== 
+==383== 
+==383== HEAP SUMMARY:
+==383==     in use at exit: 0 bytes in 0 blocks
+==383==   total heap usage: 352 allocs, 352 frees, 15,296 bytes allocated
+==383== 
+==383== All heap blocks were freed -- no leaks are possible
+==383== 
+==383== For counts of detected and suppressed errors, rerun with: -v
+==383== Use --track-origins=yes to see where uninitialised values come from
+==383== ERROR SUMMARY: 422 errors from 6 contexts (suppressed: 0 from 0)
+Testcase 9: Trying hands with straight flushes
+Valgrind returned an error status
+==388== Memcheck, a memory error detector
+==388== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==388== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==388== Command: ./test-eval inp.9.txt
+==388== Parent PID: 387
+==388== 
+==388== Conditional jump or move depends on uninitialised value(s)
+==388==    at 0x4018A2: is_n_length_straight_at (eval.c:94)
+==388==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==388==    by 0x4019C3: is_straight_at (eval.c:123)
+==388==    by 0x4026D9: describe_hand (test-eval.c:46)
+==388==    by 0x402AB6: main (test-eval.c:116)
+==388== 
+==388== Conditional jump or move depends on uninitialised value(s)
+==388==    at 0x4018AF: is_n_length_straight_at (eval.c:95)
+==388==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==388==    by 0x4019C3: is_straight_at (eval.c:123)
+==388==    by 0x4026D9: describe_hand (test-eval.c:46)
+==388==    by 0x402AB6: main (test-eval.c:116)
+==388== 
+==388== Conditional jump or move depends on uninitialised value(s)
+==388==    at 0x4018A2: is_n_length_straight_at (eval.c:94)
+==388==    by 0x4019E6: is_straight_at (eval.c:124)
+==388==    by 0x4026D9: describe_hand (test-eval.c:46)
+==388==    by 0x402AB6: main (test-eval.c:116)
+==388== 
+==388== Conditional jump or move depends on uninitialised value(s)
+==388==    at 0x4018AF: is_n_length_straight_at (eval.c:95)
+==388==    by 0x4019E6: is_straight_at (eval.c:124)
+==388==    by 0x4026D9: describe_hand (test-eval.c:46)
+==388==    by 0x402AB6: main (test-eval.c:116)
+==388== 
+==388== Conditional jump or move depends on uninitialised value(s)
+==388==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==388==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==388==    by 0x4019C3: is_straight_at (eval.c:123)
+==388==    by 0x402710: describe_hand (test-eval.c:49)
+==388==    by 0x402AB6: main (test-eval.c:116)
+==388== 
+==388== Conditional jump or move depends on uninitialised value(s)
+==388==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==388==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==388==    by 0x4019C3: is_straight_at (eval.c:123)
+==388==    by 0x402710: describe_hand (test-eval.c:49)
+==388==    by 0x402AB6: main (test-eval.c:116)
+==388== 
+==388== Conditional jump or move depends on uninitialised value(s)
+==388==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==388==    by 0x4019E6: is_straight_at (eval.c:124)
+==388==    by 0x402710: describe_hand (test-eval.c:49)
+==388==    by 0x402AB6: main (test-eval.c:116)
+==388== 
+==388== Conditional jump or move depends on uninitialised value(s)
+==388==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==388==    by 0x4019E6: is_straight_at (eval.c:124)
+==388==    by 0x402710: describe_hand (test-eval.c:49)
+==388==    by 0x402AB6: main (test-eval.c:116)
+==388== 
+==388== Conditional jump or move depends on uninitialised value(s)
+==388==    at 0x4018A2: is_n_length_straight_at (eval.c:94)
+==388==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==388==    by 0x4019C3: is_straight_at (eval.c:123)
+==388==    by 0x401E41: find_straight (eval.c:225)
+==388==    by 0x401FFF: evaluate_hand (eval.c:256)
+==388==    by 0x40288B: describe_hand (test-eval.c:68)
+==388==    by 0x402AB6: main (test-eval.c:116)
+==388== 
+==388== Conditional jump or move depends on uninitialised value(s)
+==388==    at 0x4018AF: is_n_length_straight_at (eval.c:95)
+==388==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==388==    by 0x4019C3: is_straight_at (eval.c:123)
+==388==    by 0x401E41: find_straight (eval.c:225)
+==388==    by 0x401FFF: evaluate_hand (eval.c:256)
+==388==    by 0x40288B: describe_hand (test-eval.c:68)
+==388==    by 0x402AB6: main (test-eval.c:116)
+==388== 
+==388== Conditional jump or move depends on uninitialised value(s)
+==388==    at 0x4018A2: is_n_length_straight_at (eval.c:94)
+==388==    by 0x4019E6: is_straight_at (eval.c:124)
+==388==    by 0x401E41: find_straight (eval.c:225)
+==388==    by 0x401FFF: evaluate_hand (eval.c:256)
+==388==    by 0x40288B: describe_hand (test-eval.c:68)
+==388==    by 0x402AB6: main (test-eval.c:116)
+==388== 
+==388== Conditional jump or move depends on uninitialised value(s)
+==388==    at 0x4018AF: is_n_length_straight_at (eval.c:95)
+==388==    by 0x4019E6: is_straight_at (eval.c:124)
+==388==    by 0x401E41: find_straight (eval.c:225)
+==388==    by 0x401FFF: evaluate_hand (eval.c:256)
+==388==    by 0x40288B: describe_hand (test-eval.c:68)
+==388==    by 0x402AB6: main (test-eval.c:116)
+==388== 
+==388== Conditional jump or move depends on uninitialised value(s)
+==388==    at 0x4018A2: is_n_length_straight_at (eval.c:94)
+==388==    by 0x4019E6: is_straight_at (eval.c:124)
+==388==    by 0x4026D9: describe_hand (test-eval.c:46)
+==388==    by 0x402AD6: main (test-eval.c:119)
+==388== 
+==388== Conditional jump or move depends on uninitialised value(s)
+==388==    at 0x4018AF: is_n_length_straight_at (eval.c:95)
+==388==    by 0x4019E6: is_straight_at (eval.c:124)
+==388==    by 0x4026D9: describe_hand (test-eval.c:46)
+==388==    by 0x402AD6: main (test-eval.c:119)
+==388== 
+==388== Conditional jump or move depends on uninitialised value(s)
+==388==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==388==    by 0x4019E6: is_straight_at (eval.c:124)
+==388==    by 0x402710: describe_hand (test-eval.c:49)
+==388==    by 0x402AD6: main (test-eval.c:119)
+==388== 
+==388== Conditional jump or move depends on uninitialised value(s)
+==388==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==388==    by 0x4019E6: is_straight_at (eval.c:124)
+==388==    by 0x402710: describe_hand (test-eval.c:49)
+==388==    by 0x402AD6: main (test-eval.c:119)
+==388== 
+==388== 
+==388== HEAP SUMMARY:
+==388==     in use at exit: 0 bytes in 0 blocks
+==388==   total heap usage: 294 allocs, 294 frees, 14,288 bytes allocated
+==388== 
+==388== All heap blocks were freed -- no leaks are possible
+==388== 
+==388== For counts of detected and suppressed errors, rerun with: -v
+==388== Use --track-origins=yes to see where uninitialised values come from
+==388== ERROR SUMMARY: 1212 errors from 16 contexts (suppressed: 0 from 0)
+Testcase 10: Trying each type of hand ranking
+Valgrind returned an error status
+==393== Memcheck, a memory error detector
+==393== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==393== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==393== Command: ./test-eval inp.10.txt
+==393== Parent PID: 392
+==393== 
+==393== Conditional jump or move depends on uninitialised value(s)
+==393==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==393==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==393==    by 0x4019C3: is_straight_at (eval.c:123)
+==393==    by 0x402710: describe_hand (test-eval.c:49)
+==393==    by 0x402AB6: main (test-eval.c:116)
+==393== 
+==393== Conditional jump or move depends on uninitialised value(s)
+==393==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==393==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==393==    by 0x4019C3: is_straight_at (eval.c:123)
+==393==    by 0x402710: describe_hand (test-eval.c:49)
+==393==    by 0x402AB6: main (test-eval.c:116)
+==393== 
+==393== Conditional jump or move depends on uninitialised value(s)
+==393==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==393==    by 0x4019E6: is_straight_at (eval.c:124)
+==393==    by 0x402710: describe_hand (test-eval.c:49)
+==393==    by 0x402AB6: main (test-eval.c:116)
+==393== 
+==393== Conditional jump or move depends on uninitialised value(s)
+==393==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==393==    by 0x4019E6: is_straight_at (eval.c:124)
+==393==    by 0x402710: describe_hand (test-eval.c:49)
+==393==    by 0x402AB6: main (test-eval.c:116)
+==393== 
+==393== Conditional jump or move depends on uninitialised value(s)
+==393==    at 0x4018A2: is_n_length_straight_at (eval.c:94)
+==393==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==393==    by 0x4019C3: is_straight_at (eval.c:123)
+==393==    by 0x4026D9: describe_hand (test-eval.c:46)
+==393==    by 0x402AB6: main (test-eval.c:116)
+==393== 
+==393== Conditional jump or move depends on uninitialised value(s)
+==393==    at 0x4018AF: is_n_length_straight_at (eval.c:95)
+==393==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==393==    by 0x4019C3: is_straight_at (eval.c:123)
+==393==    by 0x4026D9: describe_hand (test-eval.c:46)
+==393==    by 0x402AB6: main (test-eval.c:116)
+==393== 
+==393== Conditional jump or move depends on uninitialised value(s)
+==393==    at 0x4018A2: is_n_length_straight_at (eval.c:94)
+==393==    by 0x4019E6: is_straight_at (eval.c:124)
+==393==    by 0x4026D9: describe_hand (test-eval.c:46)
+==393==    by 0x402AB6: main (test-eval.c:116)
+==393== 
+==393== Conditional jump or move depends on uninitialised value(s)
+==393==    at 0x4018AF: is_n_length_straight_at (eval.c:95)
+==393==    by 0x4019E6: is_straight_at (eval.c:124)
+==393==    by 0x4026D9: describe_hand (test-eval.c:46)
+==393==    by 0x402AB6: main (test-eval.c:116)
+==393== 
+==393== Conditional jump or move depends on uninitialised value(s)
+==393==    at 0x4018A2: is_n_length_straight_at (eval.c:94)
+==393==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==393==    by 0x4019C3: is_straight_at (eval.c:123)
+==393==    by 0x401E41: find_straight (eval.c:225)
+==393==    by 0x401FFF: evaluate_hand (eval.c:256)
+==393==    by 0x40288B: describe_hand (test-eval.c:68)
+==393==    by 0x402AB6: main (test-eval.c:116)
+==393== 
+==393== Conditional jump or move depends on uninitialised value(s)
+==393==    at 0x4018AF: is_n_length_straight_at (eval.c:95)
+==393==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==393==    by 0x4019C3: is_straight_at (eval.c:123)
+==393==    by 0x401E41: find_straight (eval.c:225)
+==393==    by 0x401FFF: evaluate_hand (eval.c:256)
+==393==    by 0x40288B: describe_hand (test-eval.c:68)
+==393==    by 0x402AB6: main (test-eval.c:116)
+==393== 
+==393== Conditional jump or move depends on uninitialised value(s)
+==393==    at 0x4018A2: is_n_length_straight_at (eval.c:94)
+==393==    by 0x4019E6: is_straight_at (eval.c:124)
+==393==    by 0x401E41: find_straight (eval.c:225)
+==393==    by 0x401FFF: evaluate_hand (eval.c:256)
+==393==    by 0x40288B: describe_hand (test-eval.c:68)
+==393==    by 0x402AB6: main (test-eval.c:116)
+==393== 
+==393== Conditional jump or move depends on uninitialised value(s)
+==393==    at 0x4018AF: is_n_length_straight_at (eval.c:95)
+==393==    by 0x4019E6: is_straight_at (eval.c:124)
+==393==    by 0x401E41: find_straight (eval.c:225)
+==393==    by 0x401FFF: evaluate_hand (eval.c:256)
+==393==    by 0x40288B: describe_hand (test-eval.c:68)
+==393==    by 0x402AB6: main (test-eval.c:116)
+==393== 
+==393== Conditional jump or move depends on uninitialised value(s)
+==393==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==393==    by 0x4019E6: is_straight_at (eval.c:124)
+==393==    by 0x402710: describe_hand (test-eval.c:49)
+==393==    by 0x402AD6: main (test-eval.c:119)
+==393== 
+==393== Conditional jump or move depends on uninitialised value(s)
+==393==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==393==    by 0x4019E6: is_straight_at (eval.c:124)
+==393==    by 0x402710: describe_hand (test-eval.c:49)
+==393==    by 0x402AD6: main (test-eval.c:119)
+==393== 
+==393== Conditional jump or move depends on uninitialised value(s)
+==393==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==393==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==393==    by 0x4019C3: is_straight_at (eval.c:123)
+==393==    by 0x401E41: find_straight (eval.c:225)
+==393==    by 0x4022B2: evaluate_hand (eval.c:290)
+==393==    by 0x40288B: describe_hand (test-eval.c:68)
+==393==    by 0x402AD6: main (test-eval.c:119)
+==393== 
+==393== Conditional jump or move depends on uninitialised value(s)
+==393==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==393==    by 0x401928: is_ace_low_straight_at (eval.c:106)
+==393==    by 0x4019C3: is_straight_at (eval.c:123)
+==393==    by 0x401E41: find_straight (eval.c:225)
+==393==    by 0x4022B2: evaluate_hand (eval.c:290)
+==393==    by 0x40288B: describe_hand (test-eval.c:68)
+==393==    by 0x402AD6: main (test-eval.c:119)
+==393== 
+==393== Conditional jump or move depends on uninitialised value(s)
+==393==    at 0x4017F9: is_n_length_straight_at (eval.c:84)
+==393==    by 0x4019E6: is_straight_at (eval.c:124)
+==393==    by 0x401E41: find_straight (eval.c:225)
+==393==    by 0x4022B2: evaluate_hand (eval.c:290)
+==393==    by 0x40288B: describe_hand (test-eval.c:68)
+==393==    by 0x402AD6: main (test-eval.c:119)
+==393== 
+==393== Conditional jump or move depends on uninitialised value(s)
+==393==    at 0x401806: is_n_length_straight_at (eval.c:85)
+==393==    by 0x4019E6: is_straight_at (eval.c:124)
+==393==    by 0x401E41: find_straight (eval.c:225)
+==393==    by 0x4022B2: evaluate_hand (eval.c:290)
+==393==    by 0x40288B: describe_hand (test-eval.c:68)
+==393==    by 0x402AD6: main (test-eval.c:119)
+==393== 
+==393== Conditional jump or move depends on uninitialised value(s)
+==393==    at 0x4018A2: is_n_length_straight_at (eval.c:94)
+==393==    by 0x4019E6: is_straight_at (eval.c:124)
+==393==    by 0x4026D9: describe_hand (test-eval.c:46)
+==393==    by 0x402AD6: main (test-eval.c:119)
+==393== 
+==393== Conditional jump or move depends on uninitialised value(s)
+==393==    at 0x4018AF: is_n_length_straight_at (eval.c:95)
+==393==    by 0x4019E6: is_straight_at (eval.c:124)
+==393==    by 0x4026D9: describe_hand (test-eval.c:46)
+==393==    by 0x402AD6: main (test-eval.c:119)
+==393== 
+==393== 
+==393== HEAP SUMMARY:
+==393==     in use at exit: 0 bytes in 0 blocks
+==393==   total heap usage: 4,020 allocs, 4,020 frees, 81,344 bytes allocated
+==393== 
+==393== All heap blocks were freed -- no leaks are possible
+==393== 
+==393== For counts of detected and suppressed errors, rerun with: -v
+==393== Use --track-origins=yes to see where uninitialised values come from
+==393== ERROR SUMMARY: 9752 errors from 20 contexts (suppressed: 0 from 0)
+
+Overall Grade: F
