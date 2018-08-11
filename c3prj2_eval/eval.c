@@ -16,6 +16,7 @@ int card_ptr_comp(const void * vp1, const void * vp2) {
 suit_t flush_suit(deck_t * hand) {
   card_t** card= hand -> cards;
   card_t card1;
+  card1 = **(card +0);
   int s,h,d,c;
   s=h=d=c=0;
 
@@ -63,7 +64,7 @@ ssize_t  find_secondary_pair(deck_t * hand,
   card_t** card = hand -> cards;
   card_t card1,card2;
   card2 = **(card + match_idx);
-  
+  card1=**(card+0);
     for (size_t i=0 ;i< (hand ->n_cards);i++){
       card1=**(card+i);
       if ((match_counts[i] > 1)&&(card1.value != card2.value)) return i;
@@ -74,6 +75,8 @@ ssize_t  find_secondary_pair(deck_t * hand,
 int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
   card_t**card = hand -> cards;
   card_t card1,card2;
+  card1=**(card + 0);
+  card1=**(card + 0+1);
   int count =0;
 
   if (fs ==NUM_SUITS ){
@@ -102,7 +105,7 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
 int is_ace_low_straight_at(deck_t * hand, size_t index, suit_t fs){
   card_t**card = hand -> cards;
   card_t card1;
-  
+  card1=**(card+0);
   int temp=is_n_length_straight_at(hand, index, fs, 4);
   if (temp>0){
     for (size_t i=0 ; i<index ; i++){
