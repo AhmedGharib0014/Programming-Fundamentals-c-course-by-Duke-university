@@ -7,7 +7,7 @@
 void assert_card_valid(card_t c) {
   int cond1,cond2;
   cond1=(c.value >=2 )&&(c.value <= VALUE_ACE);
-  cond2=(c.suit ==  SPADES )||(c.suit == CLUBS )||(c.suit ==  HEARTS)||(c.suit == DIAMONDS);
+  cond2=(c.suit ==  SPADES )||(c.suit == CLUBS )||(c.suit ==  HEARTS)||(c.suit == DIAMONDS)||(c.suit ==NUM_SUITS );
   assert(cond1 && cond2);
 }
 

@@ -8,7 +8,7 @@ Js Js 9s 8s 7d 6h 6d; Js Js 9d 8d 8h 5h 5c
 Ks Kd Ac 9h 7s 3c 2h; Ks Kd Ac 9h 5s 3c 2h
 Ks Kd Kc Ah 5s 4c 3h; Ks Kd Kc Ah 7s 3c 2h
 Js Qc 5d 4h 3s 2h 0d; Ks Qd Jc 0h 9s 5c 4h
-As Qs 8s 7s 4s 3c 2d; Ks Kc Kd 0h 0s 5c 1d
+
 
 
 
