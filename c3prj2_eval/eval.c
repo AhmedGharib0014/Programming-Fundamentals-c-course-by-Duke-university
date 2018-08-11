@@ -84,8 +84,10 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
      card_t card2=**(card + i+1);
       if (card1.value == card2.value) continue;
       if (card2.value == (card1.value - 1)) count ++;
+      else return 0;
+      if (count >= n) return 1;  
     }
-    if (count >= n) return 1; 
+   
   }else {
     count=1;
     for (size_t i=index ; i<((hand ->n_cards)-1); i++){
@@ -94,8 +96,10 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
       if (card1.suit != fs) return 0;
       if (card1.value == card2.value) continue;
       if ((card2.value == (card1.value - 1))&&(card2.suit == card1.suit)) count ++;
+      else return 0;
+       if (count >= n) return 1; 
     }
-    if (count >= n) return 1; 
+   
   }
   return 0;
 }
@@ -103,9 +107,9 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
 int is_ace_low_straight_at(deck_t * hand, size_t index, suit_t fs){
   card_t**card = hand -> cards;
   card_t card1;
-  card1=**(card+0);
+  card1=**(card+index);
   int temp=is_n_length_straight_at(hand, index, fs, 4);
-  if (temp>0){
+  if ((temp>0 )&&(card1.value==5)){
     for (size_t i=0 ; i<index ; i++){
       card1= **(card+i);
       if (fs == NUM_SUITS){
@@ -146,10 +150,10 @@ hand_eval_t build_hand_from_match(deck_t * hand,
       if (count == 5 )  break;
     }
     if (count < 5){
-      for (size_t i=n+idx ; i < hand -> n_cards ; i++ ){
+      for (size_t i=n+idx ; i < hand -> n_cards+1 ; i++ ){
 	ans.cards[count]=*(card +i);
 	count ++;
-	if (count >4) break;}
+	if (count >= 5) break;}
     }
   }
     
