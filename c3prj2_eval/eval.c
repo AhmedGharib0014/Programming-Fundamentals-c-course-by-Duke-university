@@ -74,16 +74,14 @@ ssize_t  find_secondary_pair(deck_t * hand,
 }
 int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
   card_t**card = hand -> cards;
-  card_t card1,card2;
-  card1=**(card + 0);
-  card1=**(card + 0+1);
+  
   int count =0;
 
   if (fs ==NUM_SUITS ){
     count=1;
     for (size_t i=index ; i<((hand ->n_cards)-1); i++){
-      card1=**(card + i);
-      card1=**(card + i+1);
+     card_t card1=**(card + i);
+     card_t card2=**(card + i+1);
       if (card1.value == card2.value) continue;
       if (card2.value == (card1.value - 1)) count ++;
     }
@@ -91,8 +89,8 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
   }else {
     count=1;
     for (size_t i=index ; i<((hand ->n_cards)-1); i++){
-      card1=**(card + i);
-      card1=**(card + i+1);
+      card_t card1=**(card + i);
+      card_t card2=**(card + i+1);
       if (card1.suit != fs) return 0;
       if (card1.value == card2.value) continue;
       if ((card2.value == (card1.value - 1))&&(card2.suit == card1.suit)) count ++;
