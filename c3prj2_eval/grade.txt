@@ -1,4 +1,4 @@
-Grading at Sun Aug 12 03:10:37 UTC 2018
+Grading at Sun Aug 12 03:53:57 UTC 2018
 Compiling your code
 rm test poker cards.o my-test-main.o *~
 Makefile:10: recipe for target 'clean' failed
@@ -22,149 +22,8 @@ Your file matched the expected output
  - Testcase passed
 Testcase 5: Trying hands with straights
  Checking the output 
-Line_29_did_not_match
-Line_30_did_not_match
-Line_42_did_not_match
-Line_104_did_not_match
-Line_105_did_not_match
-Line_108_did_not_match
-Your file did not match the expected ouput
- - Output did not match, testcase failed
-Hand 1:								Hand 1:
---------							--------
-0s 9s 8c 7h 6d 							0s 9s 8c 7h 6d 
- - No flush							 - No flush
- - Straight at index 0						 - Straight at index 0
- - The most of a kind is 1 of a kind (at index 0 / value 0)	 - The most of a kind is 1 of a kind (at index 0 / value 0)
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: STRAIGHT				 - evaluate_hand's ranking: STRAIGHT
- - 5 cards used for hand: 0s 9s 8c 7h 6d 			 - 5 cards used for hand: 0s 9s 8c 7h 6d 
-Hand 2:								Hand 2:
---------							--------
-Js 0c 9s 8d 7c 							Js 0c 9s 8d 7c 
- - No flush							 - No flush
- - Straight at index 0						 - Straight at index 0
- - The most of a kind is 1 of a kind (at index 0 / value J)	 - The most of a kind is 1 of a kind (at index 0 / value J)
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: STRAIGHT				 - evaluate_hand's ranking: STRAIGHT
- - 5 cards used for hand: Js 0c 9s 8d 7c 			 - 5 cards used for hand: Js 0c 9s 8d 7c 
-Comparison : 							Comparison : 
---------------							--------------
-Hand 2 wins!							Hand 2 wins!
-============================					============================
-Hand 1:								Hand 1:
---------							--------
-As 5c 4h 3s 2c 							As 5c 4h 3s 2c 
- - No flush							 - No flush
- - Straight at index 0					      <
- - The most of a kind is 1 of a kind (at index 0 / value A)	 - The most of a kind is 1 of a kind (at index 0 / value A)
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: STRAIGHT			      |	 - evaluate_hand's ranking: NOTHING
- - 5 cards used for hand: 5c 4h 3s 2c As 		      |	 - 5 cards used for hand: As 5c 4h 3s 2c 
-Hand 2:								Hand 2:
---------							--------
-6c 5h 4s 3s 2d 							6c 5h 4s 3s 2d 
- - No flush							 - No flush
- - Straight at index 0						 - Straight at index 0
- - The most of a kind is 1 of a kind (at index 0 / value 6)	 - The most of a kind is 1 of a kind (at index 0 / value 6)
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: STRAIGHT				 - evaluate_hand's ranking: STRAIGHT
- - 5 cards used for hand: 6c 5h 4s 3s 2d 			 - 5 cards used for hand: 6c 5h 4s 3s 2d 
-Comparison : 							Comparison : 
---------------							--------------
-Hand 2 wins!						      |	Hand 1 wins!
-============================					============================
-Hand 1:								Hand 1:
---------							--------
-Qh Qs Jd Js 0c 0s 9d 8c 					Qh Qs Jd Js 0c 0s 9d 8c 
- - No flush							 - No flush
- - Straight at index 0						 - Straight at index 0
- - Straight at index 1						 - Straight at index 1
- - The most of a kind is 2 of a kind (at index 0 / value Q)	 - The most of a kind is 2 of a kind (at index 0 / value Q)
- - Secondary pair at index 2 (value J)				 - Secondary pair at index 2 (value J)
- - evaluate_hand's ranking: STRAIGHT				 - evaluate_hand's ranking: STRAIGHT
- - 5 cards used for hand: Qh Jd 0c 9d 8c 			 - 5 cards used for hand: Qh Jd 0c 9d 8c 
-Hand 2:								Hand 2:
---------							--------
-Kc Qh Qs Jd Js 0c 0s 9d 					Kc Qh Qs Jd Js 0c 0s 9d 
- - No flush							 - No flush
- - Straight at index 0						 - Straight at index 0
- - The most of a kind is 2 of a kind (at index 1 / value Q)	 - The most of a kind is 2 of a kind (at index 1 / value Q)
- - Secondary pair at index 3 (value J)				 - Secondary pair at index 3 (value J)
- - evaluate_hand's ranking: STRAIGHT				 - evaluate_hand's ranking: STRAIGHT
- - 5 cards used for hand: Kc Qh Jd 0c 9d 			 - 5 cards used for hand: Kc Qh Jd 0c 9d 
-Comparison : 							Comparison : 
---------------							--------------
-Hand 2 wins!							Hand 2 wins!
-============================					============================
-Hand 1:								Hand 1:
---------							--------
-As Jd 9h 8c 7d 6c 5d 						As Jd 9h 8c 7d 6c 5d 
- - No flush							 - No flush
- - Straight at index 2						 - Straight at index 2
- - The most of a kind is 1 of a kind (at index 0 / value A)	 - The most of a kind is 1 of a kind (at index 0 / value A)
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: STRAIGHT				 - evaluate_hand's ranking: STRAIGHT
- - 5 cards used for hand: 9h 8c 7d 6c 5d 			 - 5 cards used for hand: 9h 8c 7d 6c 5d 
-Hand 2:								Hand 2:
---------							--------
-Kc Qh 8c 7h 6c 5d 4s 						Kc Qh 8c 7h 6c 5d 4s 
- - No flush							 - No flush
- - Straight at index 2						 - Straight at index 2
- - The most of a kind is 1 of a kind (at index 0 / value K)	 - The most of a kind is 1 of a kind (at index 0 / value K)
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: STRAIGHT				 - evaluate_hand's ranking: STRAIGHT
- - 5 cards used for hand: 8c 7h 6c 5d 4s 			 - 5 cards used for hand: 8c 7h 6c 5d 4s 
-Comparison : 							Comparison : 
---------------							--------------
-Hand 1 wins!							Hand 1 wins!
-============================					============================
-Hand 1:								Hand 1:
---------							--------
-As Kd Qs Jd 0s 							As Kd Qs Jd 0s 
- - No flush							 - No flush
- - Straight at index 0						 - Straight at index 0
- - The most of a kind is 1 of a kind (at index 0 / value A)	 - The most of a kind is 1 of a kind (at index 0 / value A)
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: STRAIGHT				 - evaluate_hand's ranking: STRAIGHT
- - 5 cards used for hand: As Kd Qs Jd 0s 			 - 5 cards used for hand: As Kd Qs Jd 0s 
-Hand 2:								Hand 2:
---------							--------
-Ac 5s 4c 3s 2s 							Ac 5s 4c 3s 2s 
- - No flush							 - No flush
- - Straight at index 0					      <
- - The most of a kind is 1 of a kind (at index 0 / value A)	 - The most of a kind is 1 of a kind (at index 0 / value A)
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: STRAIGHT			      |	 - evaluate_hand's ranking: NOTHING
- - 5 cards used for hand: 5s 4c 3s 2s Ac 		      |	 - 5 cards used for hand: Ac 5s 4c 3s 2s 
-Comparison : 							Comparison : 
---------------							--------------
-Hand 1 wins!						      |	Hand 2 wins!
-============================					============================
-Hand 1:								Hand 1:
---------							--------
-Jh 0s 9c 8s 7c 4c 3d 						Jh 0s 9c 8s 7c 4c 3d 
- - No flush							 - No flush
- - Straight at index 0						 - Straight at index 0
- - The most of a kind is 1 of a kind (at index 0 / value J)	 - The most of a kind is 1 of a kind (at index 0 / value J)
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: STRAIGHT				 - evaluate_hand's ranking: STRAIGHT
- - 5 cards used for hand: Jh 0s 9c 8s 7c 			 - 5 cards used for hand: Jh 0s 9c 8s 7c 
-Hand 2:								Hand 2:
---------							--------
-Jh 0s 9c 8s 7c 6c 5d 						Jh 0s 9c 8s 7c 6c 5d 
- - No flush							 - No flush
- - Straight at index 0						 - Straight at index 0
- - Straight at index 1						 - Straight at index 1
- - Straight at index 2						 - Straight at index 2
- - The most of a kind is 1 of a kind (at index 0 / value J)	 - The most of a kind is 1 of a kind (at index 0 / value J)
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: STRAIGHT				 - evaluate_hand's ranking: STRAIGHT
- - 5 cards used for hand: Jh 0s 9c 8s 7c 			 - 5 cards used for hand: Jh 0s 9c 8s 7c 
-Comparison : 							Comparison : 
---------------							--------------
-Tie								Tie
-============================					============================
+Your file matched the expected output
+ - Testcase passed
 Testcase 6: Trying hands with flushes
  Checking the output 
 Your file matched the expected output
@@ -183,13 +42,6 @@ Line_54_did_not_match
 Line_57_did_not_match
 Line_64_did_not_match
 Line_67_did_not_match
-Line_79_did_not_match
-Line_80_did_not_match
-Line_89_did_not_match
-Line_92_did_not_match
-Line_109_did_not_match
-Line_110_did_not_match
-Line_113_did_not_match
 Your file did not match the expected ouput
  - Output did not match, testcase failed
 Hand 1:								Hand 1:
@@ -268,24 +120,24 @@ Hand 1:								Hand 1:
 --------							--------
 Ah Kc 5h 4h 3h 2h 						Ah Kc 5h 4h 3h 2h 
  - Flush in suit h						 - Flush in suit h
- - Straight flush at index 0				      <
+ - Straight flush at index 0					 - Straight flush at index 0
  - The most of a kind is 1 of a kind (at index 0 / value A)	 - The most of a kind is 1 of a kind (at index 0 / value A)
  - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: STRAIGHT_FLUSH		      |	 - evaluate_hand's ranking: FLUSH
- - 5 cards used for hand: 5h 4h 3h 2h Ah 		      |	 - 5 cards used for hand: Ah 5h 4h 3h 2h 
+ - evaluate_hand's ranking: STRAIGHT_FLUSH			 - evaluate_hand's ranking: STRAIGHT_FLUSH
+ - 5 cards used for hand: 5h 4h 3h 2h Ah 			 - 5 cards used for hand: 5h 4h 3h 2h Ah 
 Hand 2:								Hand 2:
 --------							--------
 Ac 6c 5c 4c 3c 2c 						Ac 6c 5c 4c 3c 2c 
  - Flush in suit c						 - Flush in suit c
- - Straight flush at index 0				      <
+ - Straight flush at index 0					 - Straight flush at index 0
  - Straight flush at index 1					 - Straight flush at index 1
  - The most of a kind is 1 of a kind (at index 0 / value A)	 - The most of a kind is 1 of a kind (at index 0 / value A)
  - No secondary pair						 - No secondary pair
  - evaluate_hand's ranking: STRAIGHT_FLUSH			 - evaluate_hand's ranking: STRAIGHT_FLUSH
- - 5 cards used for hand: 5c 4c 3c 2c Ac 		      |	 - 5 cards used for hand: 6c 5c 4c 3c 2c 
+ - 5 cards used for hand: 5c 4c 3c 2c Ac 			 - 5 cards used for hand: 5c 4c 3c 2c Ac 
 Comparison : 							Comparison : 
 --------------							--------------
-Tie							      |	Hand 1 wins!
+Tie								Tie
 ============================					============================
 Hand 1:								Hand 1:
 --------							--------
@@ -300,14 +152,14 @@ Hand 2:								Hand 2:
 --------							--------
 As 5s 4s 3s 2s 							As 5s 4s 3s 2s 
  - Flush in suit s						 - Flush in suit s
- - Straight flush at index 0				      <
+ - Straight flush at index 0					 - Straight flush at index 0
  - The most of a kind is 1 of a kind (at index 0 / value A)	 - The most of a kind is 1 of a kind (at index 0 / value A)
  - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: STRAIGHT_FLUSH		      |	 - evaluate_hand's ranking: FLUSH
- - 5 cards used for hand: 5s 4s 3s 2s As 		      |	 - 5 cards used for hand: As 5s 4s 3s 2s 
+ - evaluate_hand's ranking: STRAIGHT_FLUSH			 - evaluate_hand's ranking: STRAIGHT_FLUSH
+ - 5 cards used for hand: 5s 4s 3s 2s As 			 - 5 cards used for hand: 5s 4s 3s 2s As 
 Comparison : 							Comparison : 
 --------------							--------------
-Hand 1 wins!						      |	Hand 2 wins!
+Hand 1 wins!							Hand 1 wins!
 ============================					============================
 Testcase 10: Trying each type of hand ranking
  Checking the output 
