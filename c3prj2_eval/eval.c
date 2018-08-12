@@ -108,18 +108,21 @@ int is_ace_low_straight_at(deck_t * hand, size_t index, suit_t fs){
   card_t**card = hand -> cards;
   card_t card1;
   card1=**(card+index);
-  int temp=is_n_length_straight_at(hand, index, fs, 4);
-  if ((temp>0 )&&(card1.value==5)){
-    for (size_t i=0 ; i<index ; i++){
-      card1= **(card+i);
-      if (fs == NUM_SUITS){
-        if (card1.value == 14) return 1; 
-      }else {
-        if ((card1.value == 14)&&(card1.value == fs)) return 1; 
-      }
+  if(card1.value == 14){
+    for(size_t i=1+index ;i < (hand -> n_cards-3);i++){
+      int temp=is_n_length_straight_at(hand, i, fs, 4);
+      card1=**(card+i);
+      if (temp == 1 && card1.value == 5){
+	if (fs == NUM_SUITS) return 1; 
+	else {
+	  card1=**(card+index);
+	  if (card1.suit == fs)return 1; 
+	}
       
+      }  
     }
   }
+
   return 0;
 }
 
