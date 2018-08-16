@@ -33,10 +33,10 @@ suit_t flush_suit(deck_t * hand) {
     }
   }
 
-  if (s >= 5) return SPADES;
-  if (h >= 5) return HEARTS;
-  if (d >= 5) return DIAMONDS;
-  if (c >= 5) return CLUBS;  
+  if (s >= 4) return SPADES;
+  if (h >= 4) return HEARTS;
+  if (d >= 4) return DIAMONDS;
+  if (c >= 4) return CLUBS;  
   return NUM_SUITS;
 
 }
@@ -148,6 +148,7 @@ hand_eval_t build_hand_from_match(deck_t * hand,
   unsigned count =n;
  
   ans.ranking = what;
+  
   for(size_t i=0 ; i< n ; i++){
     ans.cards[i] = *(card +idx+i);
   }
