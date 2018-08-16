@@ -93,23 +93,14 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
     for (size_t i=index ; i<((hand ->n_cards)-1); i++){
       card_t card1=**(card + i);
       card_t card2=**(card + i+1);
-      int y=0;
-      int z=0;
-      int x=0;
-      while (card1.value == card2.value) {
-	if (card1.suit ==fs||card2.suit==fs) x=1;
+          
+      while ((card1.value == card2.value)&&( i<((hand ->n_cards)-1))) {
+	if (card1.suit ==fs) card2 =**(card + i+2);
+	else if(card2.suit == fs) card1=**(card +i+2);
 	i ++;
-	if (i >= (hand ->n_cards)-1){z=1; break;}
-	y=1;
-	card1=**(card + i);
-	card2=**(card + i+1); 
       }
-      if (z==1) break;
-      if (y==1 && x==1) count ++;
-      else if(y==1 && x==0) return 0;
- 
-      if ((card2.value == (card1.value - 1))&&(card2.suit == fs)&&(card2.suit == fs ) ) count ++;
-      else return 0;
+        if ((card2.value == (card1.value - 1))&&(card2.suit == fs)&&(card1.suit == fs ) ) count ++;
+        else return 0;
        if (count >= n) return 1; 
     }
    
