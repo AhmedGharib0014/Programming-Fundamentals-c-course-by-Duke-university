@@ -1,13 +1,32 @@
-Grading at Thu Aug 16 10:54:36 UTC 2018
+Grading at Thu Aug 16 11:37:32 UTC 2018
 Compiling your code
 rm test poker cards.o my-test-main.o *~
 Makefile:10: recipe for target 'clean' failed
 cc -ggdb3 -Wall -Werror -pedantic -std=gnu99   -c -o cards.o cards.c
 gcc -o test-eval -ggdb3 deck.o deck-c4.o eval-c4.o eval.o test-eval.o cards.o input.o future.o
 Testcase 1: Trying hands with nothing
- Checking the output 
-Your file matched the expected output
- - Testcase passed
+Valgrind returned an error status
+==1154== Memcheck, a memory error detector
+==1154== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==1154== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==1154== Command: ./test-eval inp.1.txt
+==1154== Parent PID: 1153
+==1154== 
+==1154== Use of uninitialised value of size 8
+==1154==    at 0x400C3B: print_hand (deck.c:16)
+==1154==    by 0x402A36: describe_hand (test-eval.c:74)
+==1154==    by 0x402C16: main (test-eval.c:116)
+==1154== 
+==1154== 
+==1154== HEAP SUMMARY:
+==1154==     in use at exit: 0 bytes in 0 blocks
+==1154==   total heap usage: 278 allocs, 278 frees, 13,728 bytes allocated
+==1154== 
+==1154== All heap blocks were freed -- no leaks are possible
+==1154== 
+==1154== For counts of detected and suppressed errors, rerun with: -v
+==1154== Use --track-origins=yes to see where uninitialised values come from
+==1154== ERROR SUMMARY: 2 errors from 1 contexts (suppressed: 0 from 0)
 Testcase 2: Trying hands with pairs
  Checking the output 
 Your file matched the expected output
@@ -30,8 +49,211 @@ Your file matched the expected output
  - Testcase passed
 Testcase 7: Trying hands with full houses
  Checking the output 
-Your file matched the expected output
- - Testcase passed
+Line_12_did_not_match
+Line_32_did_not_match
+Line_52_did_not_match
+Your file did not match the expected ouput
+ - Output did not match, testcase failed
+Hand 1:								Hand 1:
+--------							--------
+Kd Kh Ks 8d 7c 7h 2c 						Kd Kh Ks 8d 7c 7h 2c 
+ - No flush							 - No flush
+ - The most of a kind is 3 of a kind (at index 0 / value K)	 - The most of a kind is 3 of a kind (at index 0 / value K)
+ - Secondary pair at index 4 (value 7)				 - Secondary pair at index 4 (value 7)
+ - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
+ - 5 cards used for hand: Kd Kh Ks 7c 7h 			 - 5 cards used for hand: Kd Kh Ks 7c 7h 
+Hand 2:								Hand 2:
+--------							--------
+Kd Kh Ks 9h 7c 7h 2h 						Kd Kh Ks 9h 7c 7h 2h 
+ - No flush						      |	 - Flush in suit h
+ - The most of a kind is 3 of a kind (at index 0 / value K)	 - The most of a kind is 3 of a kind (at index 0 / value K)
+ - Secondary pair at index 4 (value 7)				 - Secondary pair at index 4 (value 7)
+ - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
+ - 5 cards used for hand: Kd Kh Ks 7c 7h 			 - 5 cards used for hand: Kd Kh Ks 7c 7h 
+Comparison : 							Comparison : 
+--------------							--------------
+Tie								Tie
+============================					============================
+Hand 1:								Hand 1:
+--------							--------
+Kd Kh Ks 8d 7c 7h 2c 						Kd Kh Ks 8d 7c 7h 2c 
+ - No flush							 - No flush
+ - The most of a kind is 3 of a kind (at index 0 / value K)	 - The most of a kind is 3 of a kind (at index 0 / value K)
+ - Secondary pair at index 4 (value 7)				 - Secondary pair at index 4 (value 7)
+ - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
+ - 5 cards used for hand: Kd Kh Ks 7c 7h 			 - 5 cards used for hand: Kd Kh Ks 7c 7h 
+Hand 2:								Hand 2:
+--------							--------
+Qd Qh Qs 9h 7c 7h 2h 						Qd Qh Qs 9h 7c 7h 2h 
+ - No flush						      |	 - Flush in suit h
+ - The most of a kind is 3 of a kind (at index 0 / value Q)	 - The most of a kind is 3 of a kind (at index 0 / value Q)
+ - Secondary pair at index 4 (value 7)				 - Secondary pair at index 4 (value 7)
+ - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
+ - 5 cards used for hand: Qd Qh Qs 7c 7h 			 - 5 cards used for hand: Qd Qh Qs 7c 7h 
+Comparison : 							Comparison : 
+--------------							--------------
+Hand 1 wins!							Hand 1 wins!
+============================					============================
+Hand 1:								Hand 1:
+--------							--------
+Kd Kh Ks 8d 7c 7h 2c 						Kd Kh Ks 8d 7c 7h 2c 
+ - No flush							 - No flush
+ - The most of a kind is 3 of a kind (at index 0 / value K)	 - The most of a kind is 3 of a kind (at index 0 / value K)
+ - Secondary pair at index 4 (value 7)				 - Secondary pair at index 4 (value 7)
+ - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
+ - 5 cards used for hand: Kd Kh Ks 7c 7h 			 - 5 cards used for hand: Kd Kh Ks 7c 7h 
+Hand 2:								Hand 2:
+--------							--------
+Qd Qh Qs 9h 8c 8h 2h 						Qd Qh Qs 9h 8c 8h 2h 
+ - No flush						      |	 - Flush in suit h
+ - The most of a kind is 3 of a kind (at index 0 / value Q)	 - The most of a kind is 3 of a kind (at index 0 / value Q)
+ - Secondary pair at index 4 (value 8)				 - Secondary pair at index 4 (value 8)
+ - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
+ - 5 cards used for hand: Qd Qh Qs 8c 8h 			 - 5 cards used for hand: Qd Qh Qs 8c 8h 
+Comparison : 							Comparison : 
+--------------							--------------
+Hand 1 wins!							Hand 1 wins!
+============================					============================
+Hand 1:								Hand 1:
+--------							--------
+Kd Kh Ks 8d 7c 7h 2c 						Kd Kh Ks 8d 7c 7h 2c 
+ - No flush							 - No flush
+ - The most of a kind is 3 of a kind (at index 0 / value K)	 - The most of a kind is 3 of a kind (at index 0 / value K)
+ - Secondary pair at index 4 (value 7)				 - Secondary pair at index 4 (value 7)
+ - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
+ - 5 cards used for hand: Kd Kh Ks 7c 7h 			 - 5 cards used for hand: Kd Kh Ks 7c 7h 
+Hand 2:								Hand 2:
+--------							--------
+Qd Qh Qs 9h 7c 7h 7s 						Qd Qh Qs 9h 7c 7h 7s 
+ - No flush							 - No flush
+ - The most of a kind is 3 of a kind (at index 0 / value Q)	 - The most of a kind is 3 of a kind (at index 0 / value Q)
+ - Secondary pair at index 4 (value 7)				 - Secondary pair at index 4 (value 7)
+ - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
+ - 5 cards used for hand: Qd Qh Qs 7c 7h 			 - 5 cards used for hand: Qd Qh Qs 7c 7h 
+Comparison : 							Comparison : 
+--------------							--------------
+Hand 1 wins!							Hand 1 wins!
+============================					============================
+Hand 1:								Hand 1:
+--------							--------
+Kd Kh Ks 8d 7c 7h 						Kd Kh Ks 8d 7c 7h 
+ - No flush							 - No flush
+ - The most of a kind is 3 of a kind (at index 0 / value K)	 - The most of a kind is 3 of a kind (at index 0 / value K)
+ - Secondary pair at index 4 (value 7)				 - Secondary pair at index 4 (value 7)
+ - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
+ - 5 cards used for hand: Kd Kh Ks 7c 7h 			 - 5 cards used for hand: Kd Kh Ks 7c 7h 
+Hand 2:								Hand 2:
+--------							--------
+Qd Qh Qs 9h 8c 8h 						Qd Qh Qs 9h 8c 8h 
+ - No flush							 - No flush
+ - The most of a kind is 3 of a kind (at index 0 / value Q)	 - The most of a kind is 3 of a kind (at index 0 / value Q)
+ - Secondary pair at index 4 (value 8)				 - Secondary pair at index 4 (value 8)
+ - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
+ - 5 cards used for hand: Qd Qh Qs 8c 8h 			 - 5 cards used for hand: Qd Qh Qs 8c 8h 
+Comparison : 							Comparison : 
+--------------							--------------
+Hand 1 wins!							Hand 1 wins!
+============================					============================
+Hand 1:								Hand 1:
+--------							--------
+As Kd Kh Ks 7c 7h 2c 						As Kd Kh Ks 7c 7h 2c 
+ - No flush							 - No flush
+ - The most of a kind is 3 of a kind (at index 1 / value K)	 - The most of a kind is 3 of a kind (at index 1 / value K)
+ - Secondary pair at index 4 (value 7)				 - Secondary pair at index 4 (value 7)
+ - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
+ - 5 cards used for hand: Kd Kh Ks 7c 7h 			 - 5 cards used for hand: Kd Kh Ks 7c 7h 
+Hand 2:								Hand 2:
+--------							--------
+Ad Ah As 8c 8d 8h 						Ad Ah As 8c 8d 8h 
+ - No flush							 - No flush
+ - The most of a kind is 3 of a kind (at index 0 / value A)	 - The most of a kind is 3 of a kind (at index 0 / value A)
+ - Secondary pair at index 3 (value 8)				 - Secondary pair at index 3 (value 8)
+ - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
+ - 5 cards used for hand: Ad Ah As 8c 8d 			 - 5 cards used for hand: Ad Ah As 8c 8d 
+Comparison : 							Comparison : 
+--------------							--------------
+Hand 2 wins!							Hand 2 wins!
+============================					============================
+Hand 1:								Hand 1:
+--------							--------
+As Kd Kh Ks 7c 7h 2c 						As Kd Kh Ks 7c 7h 2c 
+ - No flush							 - No flush
+ - The most of a kind is 3 of a kind (at index 1 / value K)	 - The most of a kind is 3 of a kind (at index 1 / value K)
+ - Secondary pair at index 4 (value 7)				 - Secondary pair at index 4 (value 7)
+ - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
+ - 5 cards used for hand: Kd Kh Ks 7c 7h 			 - 5 cards used for hand: Kd Kh Ks 7c 7h 
+Hand 2:								Hand 2:
+--------							--------
+Ad Ah As 6c 6d 6h 						Ad Ah As 6c 6d 6h 
+ - No flush							 - No flush
+ - The most of a kind is 3 of a kind (at index 0 / value A)	 - The most of a kind is 3 of a kind (at index 0 / value A)
+ - Secondary pair at index 3 (value 6)				 - Secondary pair at index 3 (value 6)
+ - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
+ - 5 cards used for hand: Ad Ah As 6c 6d 			 - 5 cards used for hand: Ad Ah As 6c 6d 
+Comparison : 							Comparison : 
+--------------							--------------
+Hand 2 wins!							Hand 2 wins!
+============================					============================
+Hand 1:								Hand 1:
+--------							--------
+Kh Ks 8c 7c 7d 7h 						Kh Ks 8c 7c 7d 7h 
+ - No flush							 - No flush
+ - The most of a kind is 3 of a kind (at index 3 / value 7)	 - The most of a kind is 3 of a kind (at index 3 / value 7)
+ - Secondary pair at index 0 (value K)				 - Secondary pair at index 0 (value K)
+ - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
+ - 5 cards used for hand: 7c 7d 7h Kh Ks 			 - 5 cards used for hand: 7c 7d 7h Kh Ks 
+Hand 2:								Hand 2:
+--------							--------
+Kh Ks 9d 3c 3h 3s 2c 						Kh Ks 9d 3c 3h 3s 2c 
+ - No flush							 - No flush
+ - The most of a kind is 3 of a kind (at index 3 / value 3)	 - The most of a kind is 3 of a kind (at index 3 / value 3)
+ - Secondary pair at index 0 (value K)				 - Secondary pair at index 0 (value K)
+ - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
+ - 5 cards used for hand: 3c 3h 3s Kh Ks 			 - 5 cards used for hand: 3c 3h 3s Kh Ks 
+Comparison : 							Comparison : 
+--------------							--------------
+Hand 1 wins!							Hand 1 wins!
+============================					============================
+Hand 1:								Hand 1:
+--------							--------
+Kh Ks 8c 7c 7d 7h 						Kh Ks 8c 7c 7d 7h 
+ - No flush							 - No flush
+ - The most of a kind is 3 of a kind (at index 3 / value 7)	 - The most of a kind is 3 of a kind (at index 3 / value 7)
+ - Secondary pair at index 0 (value K)				 - Secondary pair at index 0 (value K)
+ - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
+ - 5 cards used for hand: 7c 7d 7h Kh Ks 			 - 5 cards used for hand: 7c 7d 7h Kh Ks 
+Hand 2:								Hand 2:
+--------							--------
+Qh Qs 9d 3c 3h 3s 2c 						Qh Qs 9d 3c 3h 3s 2c 
+ - No flush							 - No flush
+ - The most of a kind is 3 of a kind (at index 3 / value 3)	 - The most of a kind is 3 of a kind (at index 3 / value 3)
+ - Secondary pair at index 0 (value Q)				 - Secondary pair at index 0 (value Q)
+ - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
+ - 5 cards used for hand: 3c 3h 3s Qh Qs 			 - 5 cards used for hand: 3c 3h 3s Qh Qs 
+Comparison : 							Comparison : 
+--------------							--------------
+Hand 1 wins!							Hand 1 wins!
+============================					============================
+Hand 1:								Hand 1:
+--------							--------
+Kh Ks 8c 7c 7d 7h 						Kh Ks 8c 7c 7d 7h 
+ - No flush							 - No flush
+ - The most of a kind is 3 of a kind (at index 3 / value 7)	 - The most of a kind is 3 of a kind (at index 3 / value 7)
+ - Secondary pair at index 0 (value K)				 - Secondary pair at index 0 (value K)
+ - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
+ - 5 cards used for hand: 7c 7d 7h Kh Ks 			 - 5 cards used for hand: 7c 7d 7h Kh Ks 
+Hand 2:								Hand 2:
+--------							--------
+Jh Js 9d 7c 7h 7s 2c 						Jh Js 9d 7c 7h 7s 2c 
+ - No flush							 - No flush
+ - The most of a kind is 3 of a kind (at index 3 / value 7)	 - The most of a kind is 3 of a kind (at index 3 / value 7)
+ - Secondary pair at index 0 (value J)				 - Secondary pair at index 0 (value J)
+ - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
+ - 5 cards used for hand: 7c 7h 7s Jh Js 			 - 5 cards used for hand: 7c 7h 7s Jh Js 
+Comparison : 							Comparison : 
+--------------							--------------
+Hand 1 wins!							Hand 1 wins!
+============================					============================
 Testcase 8: Trying hands with 4 of a kind
  Checking the output 
 Your file matched the expected output
@@ -162,6 +384,7 @@ Hand 1 wins!							Hand 1 wins!
 Testcase 10: Trying each type of hand ranking
  Checking the output 
 Line_20_did_not_match
+Line_34_did_not_match
 Line_41_did_not_match
 Line_62_did_not_match
 Line_83_did_not_match
@@ -170,6 +393,7 @@ Line_127_did_not_match
 Line_148_did_not_match
 Line_169_did_not_match
 Line_190_did_not_match
+Line_203_did_not_match
 Line_210_did_not_match
 Line_230_did_not_match
 Line_250_did_not_match
@@ -187,6 +411,7 @@ Line_475_did_not_match
 Line_495_did_not_match
 Line_516_did_not_match
 Line_536_did_not_match
+Line_549_did_not_match
 Line_556_did_not_match
 Line_576_did_not_match
 Line_597_did_not_match
@@ -195,6 +420,7 @@ Line_638_did_not_match
 Line_658_did_not_match
 Line_679_did_not_match
 Line_699_did_not_match
+Line_712_did_not_match
 Line_719_did_not_match
 Line_739_did_not_match
 Line_760_did_not_match
@@ -203,6 +429,7 @@ Line_801_did_not_match
 Line_821_did_not_match
 Line_843_did_not_match
 Line_864_did_not_match
+Line_878_did_not_match
 Line_885_did_not_match
 Line_906_did_not_match
 Line_927_did_not_match
@@ -211,6 +438,7 @@ Line_970_did_not_match
 Line_991_did_not_match
 Line_1013_did_not_match
 Line_1034_did_not_match
+Line_1048_did_not_match
 Line_1055_did_not_match
 Line_1076_did_not_match
 Line_1097_did_not_match
@@ -219,6 +447,7 @@ Line_1140_did_not_match
 Line_1161_did_not_match
 Line_1182_did_not_match
 Line_1202_did_not_match
+Line_1215_did_not_match
 Line_1222_did_not_match
 Line_1242_did_not_match
 Line_1262_did_not_match
@@ -227,6 +456,7 @@ Line_1304_did_not_match
 Line_1324_did_not_match
 Line_1345_did_not_match
 Line_1365_did_not_match
+Line_1378_did_not_match
 Line_1385_did_not_match
 Line_1405_did_not_match
 Line_1425_did_not_match
@@ -268,7 +498,7 @@ As Kc Qs Js 0s 2s 						As Kc Qs Js 0s 2s
 Hand 2:								Hand 2:
 --------							--------
 Kd Kh Ks 9h 7c 7h 2h 						Kd Kh Ks 9h 7c 7h 2h 
- - No flush							 - No flush
+ - No flush						      |	 - Flush in suit h
  - The most of a kind is 3 of a kind (at index 0 / value K)	 - The most of a kind is 3 of a kind (at index 0 / value K)
  - Secondary pair at index 4 (value 7)				 - Secondary pair at index 4 (value 7)
  - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
@@ -437,7 +667,7 @@ Kc Kd Kh Ks 8c 7d 						Kc Kd Kh Ks 8c 7d
 Hand 2:								Hand 2:
 --------							--------
 Kd Kh Ks 9h 7c 7h 2h 						Kd Kh Ks 9h 7c 7h 2h 
- - No flush							 - No flush
+ - No flush						      |	 - Flush in suit h
  - The most of a kind is 3 of a kind (at index 0 / value K)	 - The most of a kind is 3 of a kind (at index 0 / value K)
  - Secondary pair at index 4 (value 7)				 - Secondary pair at index 4 (value 7)
  - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
@@ -783,7 +1013,7 @@ As Qd 9h 7c 3d 2s 						As Qd 9h 7c 3d 2s
 Hand 2:								Hand 2:
 --------							--------
 Kd Kh Ks 9h 7c 7h 2h 						Kd Kh Ks 9h 7c 7h 2h 
- - No flush							 - No flush
+ - No flush						      |	 - Flush in suit h
  - The most of a kind is 3 of a kind (at index 0 / value K)	 - The most of a kind is 3 of a kind (at index 0 / value K)
  - Secondary pair at index 4 (value 7)				 - Secondary pair at index 4 (value 7)
  - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
@@ -946,7 +1176,7 @@ Ac As Kh 9d 8c 3h 						Ac As Kh 9d 8c 3h
 Hand 2:								Hand 2:
 --------							--------
 Kd Kh Ks 9h 7c 7h 2h 						Kd Kh Ks 9h 7c 7h 2h 
- - No flush							 - No flush
+ - No flush						      |	 - Flush in suit h
  - The most of a kind is 3 of a kind (at index 0 / value K)	 - The most of a kind is 3 of a kind (at index 0 / value K)
  - Secondary pair at index 4 (value 7)				 - Secondary pair at index 4 (value 7)
  - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
@@ -1112,7 +1342,7 @@ As Ks Qs Js 0s 							As Ks Qs Js 0s
 Hand 2:								Hand 2:
 --------							--------
 Kd Kh Ks 9h 7c 7h 2h 						Kd Kh Ks 9h 7c 7h 2h 
- - No flush							 - No flush
+ - No flush						      |	 - Flush in suit h
  - The most of a kind is 3 of a kind (at index 0 / value K)	 - The most of a kind is 3 of a kind (at index 0 / value K)
  - Secondary pair at index 4 (value 7)				 - Secondary pair at index 4 (value 7)
  - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
@@ -1282,7 +1512,7 @@ Hand 1:								Hand 1:
 Hand 2:								Hand 2:
 --------							--------
 Kd Kh Ks 9h 7c 7h 2h 						Kd Kh Ks 9h 7c 7h 2h 
- - No flush							 - No flush
+ - No flush						      |	 - Flush in suit h
  - The most of a kind is 3 of a kind (at index 0 / value K)	 - The most of a kind is 3 of a kind (at index 0 / value K)
  - Secondary pair at index 4 (value 7)				 - Secondary pair at index 4 (value 7)
  - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
@@ -1449,7 +1679,7 @@ Qc Qd Qh 7c 5h 2c 						Qc Qd Qh 7c 5h 2c
 Hand 2:								Hand 2:
 --------							--------
 Kd Kh Ks 9h 7c 7h 2h 						Kd Kh Ks 9h 7c 7h 2h 
- - No flush							 - No flush
+ - No flush						      |	 - Flush in suit h
  - The most of a kind is 3 of a kind (at index 0 / value K)	 - The most of a kind is 3 of a kind (at index 0 / value K)
  - Secondary pair at index 4 (value 7)				 - Secondary pair at index 4 (value 7)
  - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
@@ -1612,7 +1842,7 @@ Ac As Kc Kh 4d 							Ac As Kc Kh 4d
 Hand 2:								Hand 2:
 --------							--------
 Kd Kh Ks 9h 7c 7h 2h 						Kd Kh Ks 9h 7c 7h 2h 
- - No flush							 - No flush
+ - No flush						      |	 - Flush in suit h
  - The most of a kind is 3 of a kind (at index 0 / value K)	 - The most of a kind is 3 of a kind (at index 0 / value K)
  - Secondary pair at index 4 (value 7)				 - Secondary pair at index 4 (value 7)
  - evaluate_hand's ranking: FULL_HOUSE				 - evaluate_hand's ranking: FULL_HOUSE
@@ -1724,4 +1954,4 @@ Comparison : 							Comparison :
 Hand 2 wins!						      |	Hand 1 wins!
 ============================					============================
 
-Overall Grade: C
+Overall Grade: D
