@@ -179,8 +179,8 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 
   hand_eval_t hand11= evaluate_hand(hand1);
   hand_eval_t hand22= evaluate_hand(hand2);
-  if (hand11.ranking > hand22.ranking) return 1;
-  else if (hand11.ranking < hand22.ranking) return -1;
+  if (hand11.ranking < hand22.ranking) return 1;
+  else if (hand11.ranking > hand22.ranking) return -1;
   else {
     for (size_t i=0 ;i<5;i++){
       card_t * card1=hand11.cards[i];
