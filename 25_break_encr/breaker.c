@@ -19,7 +19,7 @@ int findkey(FILE *f){
      }
      int k =  0;
      if (max >= ('e' - 'a')) k=max-('e'-'a') ;
-     else k= max; 
+     else k=(26-('e'-'a'))+ max; 
      return k ;
    }
   
