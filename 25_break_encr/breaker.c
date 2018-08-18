@@ -17,7 +17,7 @@ int findkey(FILE *f){
     int j=0;
      for (int i=0 ;i<26; i++){
        if(arr[i] > max){
-	 max=i;
+	 max=arr[i];
 	 j=i;}
      }
      int k =  0;
