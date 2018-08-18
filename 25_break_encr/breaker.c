@@ -14,12 +14,15 @@ int findkey(FILE *f){
      }
   }
     int max=0;
+    int j=0;
      for (int i=0 ;i<26; i++){
-       if(arr[i] > max) max=i;
+       if(arr[i] > max){
+	 max=i;
+	 j=i}
      }
      int k =  0;
-     if (max >= ('e' - 'a')) k=max-('e'-'a') ;
-     else k=(26-('e'-'a'))+ max; 
+     if (j >= ('e' - 'a')) k=j-('e'-'a') ;
+     else k=(26-('e'-'a'))+ j; 
      return k ;
    }
   
