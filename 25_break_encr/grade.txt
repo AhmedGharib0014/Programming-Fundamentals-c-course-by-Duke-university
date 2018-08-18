@@ -1,7 +1,15 @@
-Grading at Sat Aug 18 10:46:04 UTC 2018
+Grading at Sat Aug 18 10:47:06 UTC 2018
 Attempting to compile breaker.c 
 gcc -o breaker  breaker.c
-Makefile:2: recipe for target 'breaker' failed
-The code did not compile!
+testcase1 passed
+#################################################
+testcase2:
+testcase2 passed
+#################################################
+testcase3:
+testcase3 failed
+#################################################
+testcase4:
+testcase4 failed
 
 Overall Grade: F
