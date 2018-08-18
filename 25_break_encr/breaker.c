@@ -17,8 +17,9 @@ int findkey(FILE *f){
      for (int i=0 ;i<26; i++){
        if(arr[i] > max) max=i;
      }
-     int k = max -('e' - 'a');
-     if (k < 0) k = (25-('e'-'a')) + max; 
+     int k =  0;
+     if (max >= ('e' - 'a')) k=max-('e'-'a') ;
+     else k= max; 
      return k ;
    }
   
