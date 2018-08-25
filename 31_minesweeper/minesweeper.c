@@ -45,14 +45,14 @@ board_t * makeBoard(int w, int h, int numMines) {
   b->width = w;
   b->height = h;
   b->totalMines= numMines;
-  b->board=malloc(w*(sizeof(*(b->board))));
+  b->board=malloc(h*(sizeof(*(b->board))));
   int * curr = NULL;
-  for(int x=0 ; x<w; x++){
-    curr = malloc(h*sizeof(*curr));
-    for(int y=0 ;y<h;y++){
-      curr[y]=UNKNOWN;
+  for(int y=0 ; y<h; y++){
+    curr = malloc(w*sizeof(*curr));
+    for(int x=0 ;x<h;x++){
+      curr[x]=UNKNOWN;
     }   
-    b->board[x]= curr;
+    b->board[y]= curr;
     curr=NULL;  
   }
 
@@ -126,39 +126,39 @@ int countMines(board_t * b, int x, int y) {
   x1=x-1;
   y1=y-1;
   if(checkvalid(x1,y1,w,h)){
-    if (IS_MINE(b->board[x1][y1])) count ++;
+    if (IS_MINE(b->board[y1][x1])) count ++;
   }
   y1=y;
   if(checkvalid(x1,y1,w,h)){
-    if (IS_MINE(b->board[x1][y1])) count ++;
+    if (IS_MINE(b->board[y1][x1])) count ++;
   }
   y1=y+1;
   if(checkvalid(x1,y1,w,h)){
-    if (IS_MINE(b->board[x1][y1])) count ++;
+    if (IS_MINE(b->board[y1][x1])) count ++;
   }
 
   x1=x+1;
   y1=y-1;
   if(checkvalid(x1,y1,w,h)){
-    if (IS_MINE(b -> board[x1][y1])) count ++;
+    if (IS_MINE(b->board[y1][x1])) count ++;
   }
   y1=y;
   if(checkvalid(x1,y1,w,h)){
-    if (IS_MINE(b -> board[x1][y1])) count ++;
+    if (IS_MINE(b->board[y1][x1])) count ++;
   }
   y1=y+1;
   if(checkvalid(x1,y1,w,h)){
-    if (IS_MINE(b -> board[x1][y1])) count ++;
+    if (IS_MINE(b->board[y1][x1])) count ++;
   }
 
   x1=x;
   y1=y-1;
   if(checkvalid(x1,y1,w,h)){
-    if (IS_MINE(b -> board[x1][y1])) count ++;
+    if (IS_MINE(b->board[y1][x1])) count ++;
   }
   y1=y+1;
   if(checkvalid(x1,y1,w,h)){
-    if (IS_MINE(b -> board[x1][y1])) count ++;
+    if (IS_MINE(b->board[y1][x1])) count ++;
   }
   
   //WRITE ME!
@@ -185,17 +185,17 @@ int click (board_t * b, int x, int y) {
 
 
 int checkWin(board_t * b) {
-  for(int x=0 ; x < b->width;x++){
-    for(int y=0; y < b->height;y++){
-      if (b->board[x][y]==UNKNOWN) return 0;
+  for(int y=0 ; y < b->height;y++){
+    for(int x=0; x < b->width;x++){
+      if (b->board[y][x]==UNKNOWN) return 0;
     }
   }
   return 1;
 }
 
 void freeBoard(board_t * b) {
-  for(int x=(b->width-1) ; x>=0;x--){
-    free(b->board[x]);
+  for(int y=(b->height-1) ; y>=0;y--){
+    free(b->board[y]);
   }
   free(b->board);
   free(b);
