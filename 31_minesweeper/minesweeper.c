@@ -112,7 +112,7 @@ void printBoard(board_t * b) {
   printf("\nFound %d of %d mines\n", found, b->totalMines);
 }
 int checkvalid(int x ,int y ,int w,int h){
-  if ((x>=0)&&(x < w)&&((y >= 0)&&(y<h))) return 1;
+  if (((x>=0)&&(x < w))&&((y >= 0)&&(y<h))) return 1;
   else return 0;
 }
 
@@ -127,15 +127,15 @@ int countMines(board_t * b, int x, int y) {
   x1=x-1;
   y1=y-1;
   if(checkvalid(x1,y1,w,h)){
-    if (IS_MINE(b -> board[x1][y1])) count ++;
+    if (IS_MINE(b->board[x1][y1])) count ++;
   }
   y1=y;
   if(checkvalid(x1,y1,w,h)){
-    if (IS_MINE(b -> board[x1][y1])) count ++;
+    if (IS_MINE(b->board[x1][y1])) count ++;
   }
   y1=y+1;
   if(checkvalid(x1,y1,w,h)){
-    if (IS_MINE(b -> board[x1][y1])) count ++;
+    if (IS_MINE(b->board[x1][y1])) count ++;
   }
 
   x1=x+1;
