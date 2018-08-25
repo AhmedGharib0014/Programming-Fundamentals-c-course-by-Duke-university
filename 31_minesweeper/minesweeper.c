@@ -51,8 +51,7 @@ board_t * makeBoard(int w, int h, int numMines) {
     curr = malloc(h*sizeof(*curr));
     for(int y=0 ;y<h;y++){
       curr[y]=UNKNOWN;
-    }
-   
+    }   
     b->board[x]= curr;
     curr=NULL;  
   }
@@ -188,7 +187,7 @@ int click (board_t * b, int x, int y) {
 int checkWin(board_t * b) {
   for(int x=0 ; x < b->width;x++){
     for(int y=0; y < b->height;y++){
-      if (b -> board[x][y]==UNKNOWN) return 0;
+      if (b->board[x][y]==UNKNOWN) return 0;
     }
   }
   return 1;
