@@ -21,13 +21,13 @@ void addCount(counts_t * c, const char * name) {
         h=1;}
     }
     if (h==0) {
-      x=NULL;
-      x=malloc(sizeof(*x));
-      x->str=malloc(sizeof(name)+1);
-      strcpy(x->str , name);
-      x->cnt=1; 
+      one_count_t *x1=NULL;
+      x1=malloc(sizeof(*x1));
+      x1->str=malloc(2*sizeof(name));
+      strcpy(x1->str , name);
+      x1->cnt=1; 
       c->cntArr=realloc(c->cntArr,(c->cntSize+1)*sizeof(*c->cntArr));
-      c->cntArr[c->cntSize]=x;
+      c->cntArr[c->cntSize]=x1;
       c->cntSize ++; 
     }
     }
