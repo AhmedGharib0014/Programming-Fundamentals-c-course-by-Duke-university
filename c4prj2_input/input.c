@@ -29,8 +29,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
         add_future_card(fc,(size_t)(arr[j+1]-'0'),add_empty_card(deck)) ;
       }else{
         card_t x = card_from_letters(arr[j],arr[j+1]);
-        assert_card_valid(x);
-        add_card_to(deck,x);
+         add_card_to(deck,x);
       }
       j = j+2;
   }
