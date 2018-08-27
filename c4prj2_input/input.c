@@ -26,7 +26,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   int j=0;
   while (arr[j] != '\0') {
       if(arr[j] == '?'){
-        add_future_card(fc,(size_t)(arr[j+1]-'0'),add_empty_card(deck)) ;
+        add_future_card(fc,arr[j+1]-'0',add_empty_card(deck)) ;
       }else{
         card_t x = card_from_letters(arr[j],arr[j+1]);
          add_card_to(deck,x);
