@@ -29,7 +29,9 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
       }
     }
   }
-  if (deck->n_cards < 5 )return NULL;
+  if (deck->n_cards < 5 ){
+    return NULL;
+    fprintf(stderr,"asas");}
   return deck;
 }
 
@@ -41,9 +43,11 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
   
   while(getline(&line,&sz,f)>=0){
     arr=realloc(arr,(n_hand+1)*sizeof(*arr));
-    arr[n_hand]=hand_from_string(line,fc);
+    deck_t*deck=hand_from_string(line,fc);
+    if (deck == NULL)continue;
+    arr[n_hand]=deck;
     n_hand ++;
   }
   *n_hands=n_hand;
-  return arr;
+   return arr;
 }
