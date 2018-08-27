@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
-int com (card_t c1,card_t c2){
+int com1 (card_t c1,card_t c2){
   if ((c1.value == c2.value) &&(c1.suit == c2.suit)) return 1;
   return 0;
 
@@ -220,7 +220,7 @@ unsigned * get_match_counts(deck_t * hand) {
     
     for(int j=0 ; j< hand->n_cards;j++){
       
-      if(com (*hand->cards[j],x)) count ++;
+      if(com1 (*hand->cards[j],x)) count ++;
       
     }
     
