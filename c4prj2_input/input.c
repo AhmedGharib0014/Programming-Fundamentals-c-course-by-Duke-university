@@ -5,17 +5,13 @@
 #include "deck.h"
 #include "cards.h"
 #include "future.h"
-
-
 deck_t * hand_from_string(const char * str, future_cards_t * fc){
   deck_t* deck=malloc(sizeof(*deck));
   deck->cards = NULL;
   deck->n_cards=0;
- 
   for(int i=0;i<strlen(str);i++){
     if((str[i] == '\n')||(str[i] == ' '))continue;
     else{
- 
       if(str[i] == '?'){
         i++;
         char num[strlen(str)];
@@ -30,8 +26,9 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
       else{
         card_t x = card_from_letters(str[i],str[i+1]);
         add_card_to(deck,x);
-        i++;}}}
- 
+        i++;}
+    }
+  }
   if (deck->n_cards < 5 ){
     return NULL;
     fprintf(stderr,"asas");}
