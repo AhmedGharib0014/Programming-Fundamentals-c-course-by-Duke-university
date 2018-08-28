@@ -1,12 +1,28 @@
-Grading at Tue Aug 28 16:08:25 UTC 2018
+Grading at Tue Aug 28 16:15:16 UTC 2018
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
-input.c: In function ‘hand_from_string’:
-input.c:34:3: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
-   if(h =! 1) return NULL;
-   ^
-cc1: all warnings being treated as errors
-Compilation of input.c failed
+Compiling future.c -> future.o
+Linking input.o, future.o deck.o, cards.o, and our tester
+Testing with input file with 
+ o 1 hand
+ o No unknown/future cards
+Your file matched the expected output
+Test case passed
+Testing with input file with 
+ o Many hands
+ o No unknown/future cards
+Your file matched the expected output
+Test case passed
+Testing with input file with 
+ o Many hands
+ o 1 unknown/future cards per hand
+Your file matched the expected output
+Test case passed
+Testing with input file with 
+ o Many hands
+ o Many unknown/future cards per hand
+Your file matched the expected output
+Test case passed
 
-Overall Grade: F
+Overall Grade: A
