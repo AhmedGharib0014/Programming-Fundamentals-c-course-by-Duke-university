@@ -1,0 +1,70 @@
+Grading at Wed Aug 29 16:54:02 UTC 2018
+Running 'make clean' to do a clean build of your project
+rm -rf *.o poker *~
+Running 'make poker OTHERFLAGS=-O3' to build your project
+gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3 -c cards.c
+gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3 -c deck.c
+gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3 -c eval.c
+gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3 -c future.c
+gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3 -c input.c
+gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3 -c main.c
+gcc -o poker -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3 cards.o deck.o eval.o future.o input.o main.o
+ - Starting with some Texas Hold'em hands
+Running a simulation with 20000 draws for 2 hands...
+Could not find the win percent in your output
+Could not find the win percent in your output
+You dont seem to have the right total draws.
+Yours sum to 0 but I expected 20000
+Running a simulation with 25000 draws for 3 hands...
+Could not find the win percent in your output
+Could not find the win percent in your output
+Could not find the win percent in your output
+You dont seem to have the right total draws.
+Yours sum to 0 but I expected 25000
+Running a simulation with 25000 draws for 3 hands...
+Could not find the win percent in your output
+Could not find the win percent in your output
+Could not find the win percent in your output
+You dont seem to have the right total draws.
+Yours sum to 0 but I expected 25000
+Running a simulation with 25000 draws for 2 hands...
+Could not find the win percent in your output
+Could not find the win percent in your output
+You dont seem to have the right total draws.
+Yours sum to 0 but I expected 25000
+Running a simulation with 80000 draws for 4 hands...
+Could not find the win percent in your output
+ ** Hand 1 differed from our answer by 36.45%
+ ** Hand 2 differed from our answer by -35.94%
+ ** Hand 3 differed from our answer by -9.50%
+You dont seem to have the right total draws.
+Yours sum to 72696 but I expected 80000
+Running a simulation with 30000 draws for 2 hands...
+Could not find the win percent in your output
+ ** Hand 1 differed from our answer by 17.34%
+You dont seem to have the right total draws.
+Yours sum to 12296 but I expected 30000
+ - Next, few Seven Card Stud hands
+Running a simulation with 30000 draws for 2 hands...
+Could not find the win percent in your output
+Could not find the win percent in your output
+You dont seem to have the right total draws.
+Yours sum to 0 but I expected 30000
+Running a simulation with 40000 draws for 3 hands...
+Could not find the win percent in your output
+ ** Hand 1 differed from our answer by 27.13%
+ ** Hand 2 differed from our answer by 6.70%
+You dont seem to have the right total draws.
+Yours sum to 21225 but I expected 40000
+ - Then one from a completely made up poker variant
+Running a simulation with 100000 draws for 6 hands...
+Could not find the win percent in your output
+Could not find the win percent in your output
+Could not find the win percent in your output
+Could not find the win percent in your output
+Could not find the win percent in your output
+Could not find the win percent in your output
+You dont seem to have the right total draws.
+Yours sum to 0 but I expected 100000
+
+Overall Grade: F
