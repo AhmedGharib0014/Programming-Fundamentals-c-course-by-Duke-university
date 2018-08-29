@@ -82,7 +82,7 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
   int count =0;
 
   if (fs ==NUM_SUITS ){
-    count=0;
+    count=1;
     for (size_t i=index ; i<((hand ->n_cards)-1); i++){
      card_t card1=**(card + i);
      card_t card2=**(card + i+1);
@@ -93,7 +93,7 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
     }
    
   }else {
-    count=0;
+    count=1;
     for (size_t i=index ; i<((hand ->n_cards)-1); i++){
       card_t card1=**(card + i);
       if (card1.suit != fs && i==index) break;
@@ -101,7 +101,7 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
       while(card2.suit != fs&& i<(hand ->n_cards)-2){
         i++;
         card2=**(card+i+1);}                
-      if (card2.value == (card1.value - 1))count ++;
+      if ((card2.value == (card1.value - 1))&&(card2.suit ==fs))count ++;
       else return 0;
        if (count >= n) return 1; 
     }
@@ -113,7 +113,7 @@ int is_ace_low_straight_at(deck_t * hand, size_t index, suit_t fs){
   card_t**card = hand -> cards;
   card_t card1;
   card1=**(card+index);
-  if(card1.value == 14){
+  if (card1.value == 14){
     for(size_t i=1+index ;i < (hand -> n_cards-3);i++){
       int temp=is_n_length_straight_at(hand, i, fs, 4);
       card1=**(card+i);
@@ -127,7 +127,7 @@ int is_ace_low_straight_at(deck_t * hand, size_t index, suit_t fs){
       }  
     }
   }
-
+  
   return 0;
 }
 
@@ -223,6 +223,7 @@ void copy_straight(card_t ** to, deck_t *from, size_t ind, suit_t fs, size_t cou
   assert(fs == NUM_SUITS || from->cards[ind]->suit == fs);
   unsigned nextv = from->cards[ind]->value;
   size_t to_ind = 0;
+  //  printf("%d %zu \n",fs,ind);
   while (count > 0) {
     assert(ind < from->n_cards);
     assert(nextv >= 2);
