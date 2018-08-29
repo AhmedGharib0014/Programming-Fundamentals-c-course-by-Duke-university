@@ -82,7 +82,7 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
   int count =0;
 
   if (fs ==NUM_SUITS ){
-    count=1;
+    count=0;
     for (size_t i=index ; i<((hand ->n_cards)-1); i++){
      card_t card1=**(card + i);
      card_t card2=**(card + i+1);
@@ -93,26 +93,18 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
     }
    
   }else {
-    count=1;
+    count=0;
     for (size_t i=index ; i<((hand ->n_cards)-1); i++){
       card_t card1=**(card + i);
-      if (card1.suit != fs && i==0) break;
-      while(card1.suit != fs && i<((hand ->n_cards))){
-	i++;
-	card1=**(card+i);}
-       if (!(i<((hand ->n_cards)-1))) break;
-     
+      if (card1.suit != fs && i==index) break;
       card_t card2=**(card + i+1);
-      while(card2.suit != fs && i<((hand ->n_cards)-2)){
+      while(card2.suit != fs&& i<(hand ->n_cards)-2){
         i++;
-        card2=**(card+i+1);}
-      if( !(i<hand -> n_cards ))break;
-                
+        card2=**(card+i+1);}                
       if (card2.value == (card1.value - 1))count ++;
       else return 0;
        if (count >= n) return 1; 
     }
-   
   }
   return 0;
 }

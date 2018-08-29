@@ -15,6 +15,8 @@ int win_hand(deck_t ** deck_array,int n_hands){
   for(int i =0;i<n_hands-1;i++){
     for (int j=i+1;j<n_hands;j++){
       // print_hand(deck_array[i]);
+      //      print_hand(deck_array[j]);
+      // printf("\n");
       v=compare_hands(deck_array[i],deck_array[j]);
       if(v>0) w[i]++;
       else if (v<0) w[j]++;
