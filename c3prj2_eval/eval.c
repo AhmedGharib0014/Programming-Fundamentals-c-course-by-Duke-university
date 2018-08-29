@@ -226,7 +226,8 @@ unsigned * get_match_counts(deck_t * hand) {
 //into the card array "to"
 //if "fs" is NUM_SUITS, then suits are ignored.
 //if "fs" is any other value, a straight flush (of that suit) is copied.
-void copy_straight(card_t ** to, deck_t *from, size_t ind, suit_t fs, size_t count) {
+void copy_straight(card_t ** to, deck_t *from, size_t ind, suit_t fs, size_t count){
+
   assert(fs == NUM_SUITS || from->cards[ind]->suit == fs);
   unsigned nextv = from->cards[ind]->value;
   size_t to_ind = 0;
