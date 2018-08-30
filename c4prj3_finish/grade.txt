@@ -1,4 +1,4 @@
-Grading at Thu Aug 30 16:14:45 UTC 2018
+Grading at Thu Aug 30 16:24:14 UTC 2018
 Running 'make clean' to do a clean build of your project
 rm -rf *.o poker *~
 Running 'make poker OTHERFLAGS=-O3' to build your project
@@ -11,59 +11,54 @@ gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3 -c main.c
 gcc -o poker -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3 cards.o deck.o eval.o future.o input.o main.o
  - Starting with some Texas Hold'em hands
 Running a simulation with 20000 draws for 2 hands...
-Could not find the win percent in your output
- ** Hand 1 differed from our answer by 30.81%
-You dont seem to have the right total draws.
-Yours sum to 6899 but I expected 20000
+    Hand 0 was close enough to our answer
+    Hand 1 was close enough to our answer
+    Test case passed!    
 Running a simulation with 25000 draws for 3 hands...
-Could not find the win percent in your output
- ** Hand 1 differed from our answer by 52.35%
- ** Hand 2 differed from our answer by -48.19%
+    Hand 0 was close enough to our answer
+    Hand 1 was close enough to our answer
+    Hand 2 was close enough to our answer
 You dont seem to have the right total draws.
-Yours sum to 20452 but I expected 25000
+Yours sum to 24985 but I expected 25000
 Running a simulation with 25000 draws for 3 hands...
-Could not find the win percent in your output
- ** Hand 1 differed from our answer by -28.66%
- ** Hand 2 differed from our answer by 22.27%
+    Hand 0 was close enough to our answer
+    Hand 1 was close enough to our answer
+    Hand 2 was close enough to our answer
 You dont seem to have the right total draws.
-Yours sum to 15353 but I expected 25000
+Yours sum to 24992 but I expected 25000
 Running a simulation with 25000 draws for 2 hands...
-Could not find the win percent in your output
- ** Hand 1 differed from our answer by -43.54%
-You dont seem to have the right total draws.
-Yours sum to 19197 but I expected 25000
+    Hand 0 was close enough to our answer
+    Hand 1 was close enough to our answer
+    Test case passed!    
 Running a simulation with 80000 draws for 4 hands...
-Could not find the win percent in your output
- ** Hand 1 differed from our answer by 36.30%
- ** Hand 2 differed from our answer by -35.88%
- ** Hand 3 differed from our answer by -9.41%
-You dont seem to have the right total draws.
-Yours sum to 72702 but I expected 80000
+    Hand 0 was close enough to our answer
+    Hand 1 was close enough to our answer
+    Hand 2 was close enough to our answer
+    Hand 3 was close enough to our answer
+    Test case passed!    
 Running a simulation with 30000 draws for 2 hands...
-Could not find the win percent in your output
- ** Hand 1 differed from our answer by 16.89%
-You dont seem to have the right total draws.
-Yours sum to 12432 but I expected 30000
+    Hand 0 was close enough to our answer
+    Hand 1 was close enough to our answer
+    Test case passed!    
  - Next, few Seven Card Stud hands
 Running a simulation with 30000 draws for 2 hands...
-Could not find the win percent in your output
- ** Hand 1 differed from our answer by 5.71%
-You dont seem to have the right total draws.
-Yours sum to 14220 but I expected 30000
+    Hand 0 was close enough to our answer
+    Hand 1 was close enough to our answer
+    Test case passed!    
 Running a simulation with 40000 draws for 3 hands...
-Could not find the win percent in your output
- ** Hand 1 differed from our answer by 27.07%
- ** Hand 2 differed from our answer by 6.30%
+    Hand 0 was close enough to our answer
+    Hand 1 was close enough to our answer
+    Hand 2 was close enough to our answer
 You dont seem to have the right total draws.
-Yours sum to 21409 but I expected 40000
+Yours sum to 39996 but I expected 40000
  - Then one from a completely made up poker variant
 Running a simulation with 100000 draws for 6 hands...
 Valgrind reported errors:
-==1737== Memcheck, a memory error detector
-==1737== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==1737== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==1737== Command: ./poker whacky.txt 100000
-==1737== Parent PID: 1736
-==1737== 
+==2467== Memcheck, a memory error detector
+==2467== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==2467== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==2467== Command: ./poker whacky.txt 100000
+==2467== Parent PID: 2466
+==2467== 
 
 Overall Grade: F
