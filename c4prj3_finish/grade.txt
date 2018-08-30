@@ -1,4 +1,4 @@
-Grading at Thu Aug 30 16:24:14 UTC 2018
+Grading at Thu Aug 30 17:08:24 UTC 2018
 Running 'make clean' to do a clean build of your project
 rm -rf *.o poker *~
 Running 'make poker OTHERFLAGS=-O3' to build your project
@@ -18,14 +18,12 @@ Running a simulation with 25000 draws for 3 hands...
     Hand 0 was close enough to our answer
     Hand 1 was close enough to our answer
     Hand 2 was close enough to our answer
-You dont seem to have the right total draws.
-Yours sum to 24985 but I expected 25000
+    Test case passed!    
 Running a simulation with 25000 draws for 3 hands...
     Hand 0 was close enough to our answer
     Hand 1 was close enough to our answer
     Hand 2 was close enough to our answer
-You dont seem to have the right total draws.
-Yours sum to 24992 but I expected 25000
+    Test case passed!    
 Running a simulation with 25000 draws for 2 hands...
     Hand 0 was close enough to our answer
     Hand 1 was close enough to our answer
@@ -49,16 +47,15 @@ Running a simulation with 40000 draws for 3 hands...
     Hand 0 was close enough to our answer
     Hand 1 was close enough to our answer
     Hand 2 was close enough to our answer
-You dont seem to have the right total draws.
-Yours sum to 39996 but I expected 40000
+    Test case passed!    
  - Then one from a completely made up poker variant
 Running a simulation with 100000 draws for 6 hands...
 Valgrind reported errors:
-==2467== Memcheck, a memory error detector
-==2467== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==2467== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==2467== Command: ./poker whacky.txt 100000
-==2467== Parent PID: 2466
-==2467== 
+==3224== Memcheck, a memory error detector
+==3224== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==3224== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==3224== Command: ./poker whacky.txt 100000
+==3224== Parent PID: 3223
+==3224== 
 
-Overall Grade: F
+Overall Grade: B
