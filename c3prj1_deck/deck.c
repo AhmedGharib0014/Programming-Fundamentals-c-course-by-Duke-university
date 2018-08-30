@@ -32,11 +32,11 @@ void shuffle(deck_t * d){
   card_t * temp;
   size_t n=d ->n_cards;
   int randarry;
-  for (size_t i=0 ;i< n ;i++){
-    randarry=rand()%(n-i) + i;
-    temp=*(card+i);
-    *(card+i)=*(card+randarry);
-    *(card+randarry)=temp;
+  for (size_t i=0 ;i< n/2 ;i++){
+    randarry= random()%(n-i)+i;
+    temp=card[i];
+    card[i]=card[randarry];
+    card[randarry]=temp;
   }  
 }
 
