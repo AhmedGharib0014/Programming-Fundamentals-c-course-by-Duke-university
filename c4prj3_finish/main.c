@@ -28,12 +28,12 @@ int win_hand(deck_t ** deck_array,int n_hands){
     if(w[x] > w[largest])largest=x;
   }
    int count=0;  
-   if(w[n_hands]>0){ 
-    for(int x=0;x<n_hands+1;x++){
-  	if(w[x] == w[largest]) count++;
-    }
-   }
-    if(count>1) return n_hands+1;
+    if(w[n_hands]>0){ 
+      for(int x=0;x<n_hands+1;x++){
+      	if(w[x] == w[largest]) count++;
+	 }
+     }
+    if(count>1) return n_hands;
   return  largest;  
 }
 
