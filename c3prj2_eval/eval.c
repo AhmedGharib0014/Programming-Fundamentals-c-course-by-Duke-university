@@ -1,4 +1,4 @@
-#include "eval.h"
+#include"eval.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
@@ -78,56 +78,39 @@ ssize_t  find_secondary_pair(deck_t * hand,
   return -1;
 }
 int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
-  card_t**card = hand -> cards;  
-  int count =0;
-
+  int count =1;
   if (fs ==NUM_SUITS ){
-    count=1;
-    for (size_t i=index ; i<((hand ->n_cards)-1); i++){
-     card_t card1=**(card + i);
-     card_t card2=**(card + i+1);
-      if (card1.value == card2.value) continue;
-      if (card2.value == (card1.value - 1)) count ++;
+    for (size_t i=index ; i<hand ->n_cards-1; i++){
+      if ((*hand->cards[i]).value==(*hand->cards[i+1]).value) continue;
+      if ((*hand->cards[i]).value-1==(*hand->cards[i+1]).value){ 
+        count ++;
+        if (count == n) return 1;}
       else return 0;
-      if (count >= n) return 1;  
-    }
-   
-  }else {
-    count=1;
-    for (size_t i=index ; i<((hand ->n_cards)-1); i++){
-      card_t card1=**(card + i);
-      if (card1.suit != fs && i==index) break;
-      card_t card2=**(card + i+1);
-      while(card2.suit != fs&& i<(hand ->n_cards)-2){
-        i++;
-        card2=**(card+i+1);}                
-      if ((card2.value == (card1.value - 1))&&(card2.suit ==fs))count ++;
-      else return 0;
-       if (count >= n) return 1; 
-    }
-  }
+      }}
+  else {
+    if((*hand->cards[index]).suit != fs ) return 0;
+    card_t* org=hand->cards[index];
+    for (size_t i=index+1 ; i<hand ->n_cards; i++){
+      if ((*hand->cards[i]).suit != fs) continue;
+      if (org->value-1==(*hand->cards[i]).value){ 
+	count ++;
+	if (count == n) return 1;
+	org=hand->cards[i]; }
+	else return 0;}}
+  
   return 0;
 }
 
 int is_ace_low_straight_at(deck_t * hand, size_t index, suit_t fs){
-  card_t**card = hand -> cards;
-  card_t card1;
-  card1=**(card+index);
-  if (card1.value == 14){
-    for(size_t i=1+index ;i < (hand -> n_cards-3);i++){
-      int temp=is_n_length_straight_at(hand, i, fs, 4);
-      card1=**(card+i);
-      if (temp == 1 && card1.value == 5){
-	if (fs == NUM_SUITS) return 1; 
-	else {
-	  card1=**(card+index);
-	  if (card1.suit == fs)return 1; 
-	}
-      
-      }  
-    }
-  }
-  
+  if((*hand->cards[index]).value == VALUE_ACE){
+    for (size_t i=index+1 ; i<hand ->n_cards-3; i++){
+      int t=is_n_length_straight_at( hand,i,fs, 4);
+      if (t ==1 && (*hand->cards[i]).value==5) {
+	if (fs == NUM_SUITS )  return 1;
+	else if ((*hand->cards[index]).suit == fs) return 1;
+	return 0;  
+      }
+    }}
   return 0;
 }
 
