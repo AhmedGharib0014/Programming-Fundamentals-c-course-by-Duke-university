@@ -27,13 +27,13 @@ int win_hand(deck_t ** deck_array,int n_hands){
   for(int x=0;x<n_hands+1;x++){
     if(w[x] > w[largest])largest=x;
   }
-  //  int count=0;  
-  // if(w[n_hands]>0){ 
-  //  for(int x=0;x<n_hands+1;x++){
-  //	if(w[x] == w[largest]) count++;
-  //  }
-  // }
-  //  if(count>1) return n_hands+1;
+   int count=0;  
+   if(w[n_hands]>0){ 
+    for(int x=0;x<n_hands+1;x++){
+  	if(w[x] == w[largest]) count++;
+    }
+   }
+    if(count>1) return n_hands+1;
   return  largest;  
 }
 
@@ -73,7 +73,7 @@ int main(int argc, char ** argv) {
   }
   //you just need to print your results
   for(size_t j=0;j<n_hands;j++){
-    printf("Hand %zu won %u / %u times (%.2f%%)\n",j+1,win_array[j],num_trials,(((float)win_array[j])/num_trials)*100);
+    printf("Hand %zu won %u / %u times (%.2f%%)\n",j,win_array[j],num_trials,(((float)win_array[j])/num_trials)*100);
   }
   printf( "And there were %u ties\n",win_array[n_hands]);
   //free any memory you allocated
